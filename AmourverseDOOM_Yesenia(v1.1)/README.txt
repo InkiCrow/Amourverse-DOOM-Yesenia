@@ -15,9 +15,13 @@ These are the additional moves you have at your disposal:
 
 -Kick: You can kick your enemies when you're cornered. Default: Q.-Slide: You can slide under gaps, if you need to keep your momentum. Default: F
 
+-Slide: You can slide under gaps, if you need to keep your momentum. Default: F
+
 -Slide Kick: You can also perform a slightly stronger kick while you slide. Press Kick while sliding.
 
 -Double Jump: You can take an extra leap in the air. Nothing too fancy.-Ledge Grab: You can grab onto ledges, another simple need.
+
+-Ledge Grab: You can grab onto ledges, another simple need.
 
 -Ground Slam: You can slam the grown for a brief shockwave of damage around you. Do this while on a high place to execute a much powerful shockwave! Default: G
 
