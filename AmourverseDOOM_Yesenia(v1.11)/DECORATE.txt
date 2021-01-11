@@ -1,0 +1,45 @@
+
+#include "ACTORS/WEAPONS/ARMSBASE.txt"
+#include "ACTORS/WEAPONS/SCARFFISTS.txt"
+#include "ACTORS/WEAPONS/BUSTER.txt"
+#include "ACTORS/WEAPONS/SHARPSAW.txt"
+#include "ACTORS/WEAPONS/SLUGGERSHARD.txt"
+#include "ACTORS/WEAPONS/QUADBUCK.txt"
+#include "ACTORS/WEAPONS/SIEGETURRET.txt"
+#include "ACTORS/WEAPONS/CLAMLAUNCHER.txt"
+#include "ACTORS/WEAPONS/FERRABUSTER.txt"
+#include "ACTORS/WEAPONS/ULTRABEAM.txt"
+
+#include "ACTORS/PICKUPS/AMMOPICKUPS.txt"
+#include "ACTORS/PICKUPS/KEYPICKUPS.txt"
+#include "ACTORS/PICKUPS/HEALTHPICKUPS.txt"
+#include "ACTORS/PICKUPS/ARMORPICKUPS.txt"
+#include "ACTORS/PICKUPS/POWERUPS.txt"
+
+#include "ACTORS/EFFECTS/PUFFEFFECTS.txt"
+
+ACTOR IsClimbing : Inventory
+{
+   Inventory.Amount 1
+   Inventory.MaxAmount 1
+   -INVBAR
+   +INVENTORY.UNDROPPABLE
+}
+
+ACTOR IsKicking : Inventory
+{
+	-INVBAR
+	+UNDROPPABLE
+	Inventory.MaxAmount 1
+}
+
+ACTOR FPSLegChecker : Inventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+}
+
+ACTOR IsSliding : Inventory
+{
+	Inventory.MaxAmount 1
+}

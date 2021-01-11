@@ -1,0 +1,226 @@
+ACTOR BusterClip : Ammo
+{
+	Inventory.PickupMessage "Picked up some Buster Charge."
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 400
+	Inventory.PickUpSound "pickup/mag"
+	Inventory.Icon "BCLPA0"
+	States
+	{
+		Spawn:
+		BCLP A 2
+		BCLP B 2
+		Loop
+	}
+}
+
+ACTOR WaterShells : Ammo Replaces Shell
+{
+	Inventory.PickupMessage "Picked up a few Water Shells."
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 100
+	Inventory.PickUpSound "pickup/mag"
+	Inventory.Icon "WBCPA0"
+	States
+	{
+		Spawn:
+		WBCP ABC 3
+		Loop
+	}
+}
+
+ACTOR WaterBox : WaterShells Replaces ShellBox
+{
+	Inventory.PickupMessage "Picked up a box of Water Shells."
+	Inventory.Amount 15
+	Inventory.PickUpSound "pickup/box"
+	Inventory.Icon "WBBXA0"
+	States
+	{
+		Spawn:
+		WBBX ABC 3
+		Loop
+	}
+}
+
+ACTOR IronBullets : Ammo
+{
+	Inventory.PickupMessage "You picked up some Iron Bullets!"
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 80
+	Ammo.BackpackMaxAmount 600
+	Inventory.PickUpSound "pickup/mag"
+	Inventory.Icon "CHCPA0"
+	States
+	{
+		Spawn:
+		CHCP A 3
+		Loop
+	}
+}
+
+ACTOR IronAmmoBox : IronBullets Replaces ClipBox
+{
+	Inventory.PickUpMessage "You picked up a box of Iron Bullets!"
+	Inventory.Amount 80
+	Inventory.PickUpSound "pickup/box"
+	Inventory.Icon "CHBXA0"
+	States
+	{
+		Spawn:
+		CHBX A 3
+		Loop
+	}
+}
+
+ACTOR ClipSpawner Replaces Clip
+{
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SpawnItemEx("BusterClip")
+		Stop
+		TNT1 A 0 A_SpawnItemEx("IronBullets")
+		Stop
+	}
+}
+
+ACTOR ExplosiveClams : Ammo Replaces RocketAmmo
+{
+	Inventory.PickupMessage "You picked up some explosive clam ammo."
+	Inventory.Amount 1
+	Inventory.MaxAmount 40
+	Ammo.BackpackAmount 6
+	Ammo.BackpackMaxAmount 80
+	Inventory.PickUpSound "pickup/mag"
+	Inventory.Icon "ECCPA0"
+	States
+	{
+		Spawn:
+		ECCP A 3
+		Loop
+	}
+}
+
+ACTOR ClamBox : ExplosiveClams Replaces RocketBox
+{
+	Inventory.PickupMessage "You picked up a box of Clams!"
+	Inventory.Amount 3
+	Inventory.PickUpSound "pickup/box"
+	Inventory.Icon "ECBXA0"
+	States
+	{
+		Spawn:
+		ECBX A 3
+		Loop
+	}
+}
+
+ACTOR PlasmaCells : Ammo
+{
+	Inventory.PickupMessage "You picked up a Plasma Cell."
+	Inventory.Amount 10
+	Inventory.MaxAmount 150
+	Ammo.BackpackAmount 40
+	Ammo.BackpackMaxAmount 300
+	Inventory.PickUpSound "pickup/mag"
+	Inventory.Icon "PCCLA0"
+	States
+	{
+		Spawn:
+		PCCL ABCB 3
+		Loop
+	}
+}
+
+ACTOR CellBox : PlasmaCells
+{
+	Inventory.PickupMessage "You picked up a box full of Plasma Cells!"
+	Inventory.Amount 50
+	Inventory.PickUpSound "pickup/box"
+	Inventory.Icon "PCBXA0"
+	States
+	{
+		Spawn:
+		PCBX ABC 3
+		Loop
+	}
+}
+
+ACTOR ProtonCells : Ammo
+{
+	Inventory.PickupMessage "You picked up a Proton Cell."
+	Inventory.Amount 1
+	Inventory.MaxAmount 30
+	Ammo.BackpackAmount 6
+	Ammo.BackpackMaxAmount 60
+	Inventory.PickUpSound "pickup/mag"
+	Inventory.Icon "UPCPA0"
+	States
+	{
+		Spawn:
+		UPCP ABCD 3
+		Loop
+	}
+}
+
+ACTOR BigProtonCell : ProtonCells
+{
+	Inventory.PickupMessage "You picked up a large Proton Cell!"
+	Inventory.Amount 4
+	Inventory.PickUpSound "pickup/box"
+	Inventory.Icon "UPBXA0"
+	States
+	{
+		Spawn:
+		UPBX ABCD 3
+		Loop
+	}
+}
+
+ACTOR CellSpawnerS : Ammo Replaces Cell
+{
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(98,2)
+		TNT1 A 1 A_SpawnItem("PlasmaCells",0,0)
+		Stop
+		TNT1 A 1 A_SpawnItem("ProtonCells",0,0)
+		Stop
+	}
+}
+
+ACTOR CellSpawnerL : Ammo Replaces CellPack
+{
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(98,2)
+		TNT1 A 1 A_SpawnItem("CellBox",0,0)
+		Stop
+		TNT1 A 1 A_SpawnItem("BigProtonCell",0,0)
+		Stop
+	}
+}
+
+ACTOR AmmoBag : BackpackItem Replaces Backpack
+{
+	Height 26
+	Inventory.PickupMessage "You picked up a bag full of ammo!"
+	Inventory.PickupSound "pickup/bag"
+	States
+	{
+		Spawn:
+		ABAG A 1
+		Loop
+	}
+}

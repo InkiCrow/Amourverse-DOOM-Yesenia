@@ -1,0 +1,98 @@
+height 0;
+InterpolateHealth True, 3;
+InterpolateArmor True, 3;
+CompleteBorder True;
+Resolution 640, 480;
+
+StatusBar fullscreen, forcescaled
+{
+	//Health stats
+	DrawImage "FHD_STAT", 0, 480;
+	DrawNumber 45, NUMBRFNT, untranslated, Health, alignment(left), 67, 438;
+	
+	
+	DrawNumber 45, NUMBRFNT, untranslated, Armor, alignment(left), 67, 453;
+	
+	DrawMugShot "YES", 1, animatedgodmode, 31, 449;
+	
+	//Ammo stats
+	DrawImage "FHD_AMMO", 640, 480;
+	DrawImage weaponicon, 576, 435, center;
+	DrawNumber 30, NUMBRFNT, untranslated, Ammo1, whennotzero, 585, 458;
+	
+	//Top Time and Key stats
+	DrawImage "FHD_TIME", 320, 0;
+	DrawSwitchableImage BlueCard, "YKEYBL_0", "YKEYBL_1", 270, 25;
+	DrawSwitchableImage RedCard, "YKEYRD_0", "YKEYRD_1", 230, 15;
+	DrawSwitchableImage YellowCard, "YKEYYE_0", "YKEYYE_1", 190, 5;
+	DrawSwitchableImage BlueSkull, "YSKLBL_0", "YSKLBL_1", 350, 25;
+	DrawSwitchableImage RedSkull, "YSKLRD_0", "YSKLRD_1", 390, 15;
+	DrawSwitchableImage YellowSkull, "YSKLYE_0", "YSKLYE_1", 430, 5;
+
+	DrawString NUMBRFNT, null, Time, 290, 15, 1, alignment(center);
+}
+
+//This is the standard, zoomed out status bar.
+StatusBar normal, forcescaled
+{
+	DrawImage "HUD_BASE", 320, 476;
+	ifHealth 101
+	{
+	DrawBar "HUD_HP03", "HUD_HP00", Health(200), horizontal, 350, 435;
+	}
+	else {
+	DrawBar "HUD_HP01", "HUD_HP00", Health, horizontal, 350, 435;
+	}
+	DrawNumber 25, NUMBRFNT, untranslated, Health, alignment(left), 370, 441;
+	DrawBar "HUD_AR03", "HUD_AR00", Armor(200), horizontal, 362, 457;
+	DrawNumber 15, NUMBRFNT, untranslated, Armor, alignment(left)|whennotzero, 380, 459;
+	
+	DrawImage weaponicon, 250, 460, center;
+	DrawNumber 30, NUMBRFNT, untranslated, Ammo1, whennotzero, 258, 465;
+	
+	DrawSwitchableImage BlueCard, "YKEYBL_0", "YKEYBL_1", 90, 450;
+	DrawSwitchableImage RedCard, "YKEYRD_0", "YKEYRD_1", 110, 450;
+	DrawSwitchableImage YellowCard, "YKEYYE_0", "YKEYYE_1", 130, 450;
+	DrawSwitchableImage BlueSkull, "YSKLBL_0", "YSKLBL_1", 150, 450;
+	DrawSwitchableImage RedSkull, "YSKLRD_0", "YSKLRD_1", 170, 450;
+	DrawSwitchableImage YellowSkull, "YSKLYE_0", "YSKLYE_1", 190, 450;
+	
+	DrawMugShot "YES", 1, animatedgodmode, 319, 452;
+}
+
+
+//These expressions are for Yesenia's Mugshot
+mugshot "Normal"
+{
+	{ST00, ST01, ST02} 17;
+}
+
+mugshot "Pain"
+{
+	{KILL0} 17;
+}
+
+mugshot "Grin"
+{
+	{EVL0} 32;
+}
+
+mugshot "Ouch"
+{
+	{OUCH0} 32;
+}
+
+mugshot "Rampage"
+{
+	{EVL0} 32;
+}
+
+mugshot "GodAnimated"
+{
+	{GOD0, GOD1, GOD2} 16;
+}
+
+mugshot "Death"
+{
+	{DEAD0} 16;
+}

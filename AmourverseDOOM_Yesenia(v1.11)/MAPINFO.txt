@@ -1,0 +1,105 @@
+gameinfo {
+	PlayerClasses = "YeseniaPlayer"
+	DimColor = "80 80 00"
+	DimAmount = 0.3
+	BlurAmount = 0.3
+	QuitMessages = "Awwwww, leaving so soon?", "You said you wouldn't leave meeeee...", "Is it fap time already?", "I didn't finish showing off my toys though...", "Mweh! If you leave, you're a poopie head!", "Fine! Get out of here! See if I care... idiot..."
+	ForceTextInMenus = TRUE
+	MenuFontColor_Title = "GOLD"
+	FullscreenAutoaspect = 3
+	DrawReadThis = FALSE
+	CursorPic = "CURSOR"
+	TitlePage = "TITLESCN"
+	TitleMusic = "TITLEMUS"
+	CreditPage = "CREDITPG"
+}
+
+defaultmap
+{
+	AllowJump
+	NoCrouch
+	AirControl = 0.5
+}
+
+clearskills
+
+skill catharsis
+{
+	AmmoFactor = 3
+	HealthFactor = 3
+	EasyBossBrain
+	DamageFactor = 0.5
+	MonsterHealth = 0.5
+	SpawnFilter = Nightmare
+	Name = "Cathartic Fantasy"
+	MustConfirm = "Triple the heals, triple the ammo, but also triple the enemies! These are my bi-weekly therapy sessions.~"
+}
+
+skill thug
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	HealthFactor = 2
+	SlowMonsters
+	EasyBossBrain
+	MonsterHealth = 0.25
+	DamageFactor = 0.5
+	SpawnFilter = Baby
+	Name = "Lowly Thug"
+	MustConfirm = "A run for journalists. You're not even good enough to be a footrest."
+}
+
+skill raider
+{
+	AmmoFactor = 1
+	HealthFactor = 1.5
+	DamageFactor = 1
+	MonsterHealth = 1
+	SpawnFilter = Normal
+	Name = "Raider"
+	MustConfirm = "A standard run for a seasoned raider. You can play it... if you're boring."
+}
+
+skill ravager
+{
+	DisableCheats
+	AmmoFactor = 1
+	HealthFactor = 1
+	DamageFactor = 1.5
+	SpawnFilter = Hard
+	Name = "Ravager"
+	MustConfirm = "The true experience for a true Ravager! Bold today, aren't we?~"
+}
+
+skill destructor
+{
+	DisableCheats
+	AmmoFactor = 0.5
+	HealthFactor = 0.5
+	FastMonsters
+	DamageFactor = 2
+	MonsterHealth = 1.5
+	SpawnFilter = Nightmare
+	RespawnTime = 12
+	Name = "Destroyer"
+	MustConfirm = "They didn't let me keep my toys. I won't let them keep their lives."
+}
+
+skill psycho
+{
+	DisableCheats
+	AmmoFactor = 0.5
+	HealthFactor = 0.5
+	FastMonsters
+	DamageFactor = 3
+	MonsterHealth = 2
+	SpawnFilter = Nightmare
+	RespawnTime = 8
+	ReplaceActor = "PotionKit", "Potion"
+	ReplaceActor = "ZombieMan", "ShotgunGuy"
+	ReplaceActor = "HellKnight", "BaronOfHell"
+	ReplaceActor = "ShotgunGuy", "ChaingunGuy"
+	ReplaceActor = "DoomImpBall", "CacodemonBall"
+	Name = "PSYCHO!"
+	MustConfirm = "Beat this and I will send you nudes for an entire month."
+}

@@ -1,0 +1,112 @@
+ACTOR SiegeTurret : YeseniaArms Replaces Chaingun 25000
+{
+	Weapon.SelectionOrder 13
+	Weapon.AmmoType "IronBullets"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 100
+	Weapon.BobSpeed 2.0
+	Weapon.BobRangeX 0.6
+	Weapon.BobRangeY 0.5
+	inventory.Icon "YCHGA0"
+	Inventory.PickupMessage "You pucked up the Siege Turret Mk. IV!"
+	+ALT_USES_BOTH
+	+NOAUTOAIM
+	States
+	{
+		Spawn:
+		YCHG A 1
+		Loop
+		
+		Select:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablelegs") == 0, 2)
+		TNT1 A 0 A_Overlay(-10, "FirstPersonLegsStand")
+		CHGN ABC 2
+		CHGN D 2 A_PlaySound("siegetur/select", CHAN_WEAPON, 0.5)
+		TNT1 A 0 A_Raise(10)
+		Wait
+		
+		Deselect:
+		TNT1 A 0 A_RemoveLight("turretflash")
+		CHGN EVWX 2 A_Lower(25)
+		Wait
+		
+		Ready:
+		TNT1 A 0 A_JumpIfInventory("IsClimbing", 1, "LedgeGrab")
+		CHGN E 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3)
+		Loop
+		
+		Fire:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		TNT1 A 0 A_PlaySound("siegetur/windup", CHAN_WEAPON, 0.7)
+		CHGN EFG 3
+		CHGN EFG 2
+		CHGN EFG 1
+		Goto Hold
+		
+		Hold:
+		TNT1 A 0 A_AttachLight("turretflash", 1, "FFFFE6", 40, 70, 0)
+		CHGN H 1 BRIGHT A_FireBullets(3, 3, 1, 5, "SiegeTurretPuff", FBF_USEAMMO)
+		TNT1 A 0 A_PlaySound("siegetur/fire", CHAN_WEAPON, 1.0)
+		TNT1 A 0 A_PlaySound("siegetur/loop", CHAN_6, 0.7)
+		TNT1 A 0 A_Recoil(0.2)
+		TNT1 A 0 A_RemoveLight("turretflash")
+		CHGN FG 1
+		TNT1 A 0 A_Refire
+		Goto EndFire
+		
+		EndFire:
+		TNT1 A 0 A_PlaySound("siegetur/winddown", CHAN_WEAPON, 0.7)
+		CHGN EFG 1
+		CHGN EFG 2
+		CHGN EFG 3
+		Goto Ready
+		
+		AltFire:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		TNT1 A 0 A_PlaySound("siegetur/siege", CHAN_6, 0.7)
+		CHGN IJKLM 2
+		CHGN N 2 A_PlaySound("siegetur/windup", CHAN_WEAPON, 0.7)
+		CHGN O 2
+		Goto AltHold
+		
+		AltHold:
+		TNT1 A 0 A_AttachLight("turretflash", 1, "FFFFE6", 80, 140, 0)
+		CHGN P 1 BRIGHT A_PlaySound("siegetur/fire", CHAN_WEAPON, 1.5)
+		TNT1 A 0 A_FireBullets(18, 3, 2, 5, "SiegeTurretPuff", 0)
+		TNT1 A 0 A_JumpIfInventory("PowerInfiniteAmmo", 1, 2)
+		TNT1 A 0 A_TakeInventory("IronBullets", 3)
+		TNT1 A 0 A_Recoil(0.4)
+		TNT1 A 0 A_RemoveLight("turretflash")
+		CHGN O 1
+		TNT1 A 0 A_ReFire
+		Goto EndAltFire
+		
+		EndAltFire:
+		TNT1 A 0 A_PlaySound("siegetur/winddown", CHAN_WEAPON, 0.7)
+		CHGN OQ 1
+		CHGN OQ 2
+		CHGN OQ 3
+		TNT1 A 0 A_PlaySound("siegetur/retract", CHAN_6, 0.7)
+		CHGN RSTU 2
+		Goto Ready
+		
+		Reselect:
+		CHGN XWVE 2
+		Goto Ready
+		
+		User1:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Kick")
+		Goto Ready
+		
+		User2:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Slide")
+		Goto Ready
+		
+		User3:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "GroundSlam")
+		Goto Ready
+	}
+}

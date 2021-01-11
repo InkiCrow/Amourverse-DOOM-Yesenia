@@ -1,0 +1,13 @@
+#include "zcommon.acs"
+
+Script "SetSlideView" (void)
+{
+	SetActorProperty(0, APROP_ViewHeight, 655360);
+	//terminate;
+}
+
+Script "UnSetSlideView" (void)
+{
+	SetActorProperty(0, APROP_ViewHeight, 2686976);
+	//terminate;
+}

@@ -1,0 +1,86 @@
+ACTOR ArmorShard : BasicArmorBonus Replaces ArmorBonus
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage "You picked up an armor shard."
+	Inventory.PickupSound "pickup/shard"
+	Inventory.Icon "ASHRA0"
+	Armor.SavePercent 40
+	Armor.SaveAmount 2
+	Armor.MaxSaveAmount 200
+	+COUNTITEM
+	+ALWAYSPICKUP
+	States
+	{
+		Spawn:
+		ASHR ABCB 3
+		Loop
+	}
+}
+
+ACTOR GreenJacket : BasicArmorPickup Replaces GreenArmor
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage "You picked up an Armored Jacket."
+	Inventory.PickupSound "pickup/armor"
+	Inventory.Icon "GRNJA0"
+	Armor.SavePercent 40
+	Armor.SaveAmount 100
+	States
+	{
+		Spawn:
+		GRNJ A 9
+		GRNJ BCD 3
+		Loop
+	}
+}
+
+ACTOR BlueJacket : BasicArmorPickup
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage "You picked up an Elite Armored Jacket!"
+	Inventory.PickupSound "pickup/armor"
+	Inventory.Icon "BLUJA0"
+	Armor.SavePercent 50
+	Armor.SaveAmount 200
+	States
+	{
+		Spawn:
+		BLUJ A 9
+		BLUJ BCD 3
+		Loop
+	}
+}
+
+ACTOR BlackJacket : BasicArmorPickup
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage "You picked up an Inked Armored Jacket!!!"
+	Inventory.PickupSound "pickup/armor"
+	Inventory.Icon "BCKJA0"
+	Armor.SavePercent 60
+	Armor.SaveAmount 300
+	States
+	{
+		Spawn:
+		BCKJ A 9
+		BCKJ BCD 3
+		Loop
+	}
+}
+
+ACTOR SuperArmorSpawner Replaces BlueArmor
+{
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_Jump(69, 2)
+		TNT1 A 0 A_SpawnItemEx("BlueJacket", 0)
+		Stop
+		TNT1 A 0 A_SpawnItemEx("BlackJacket", 0)
+		Stop
+	}
+}

@@ -1,0 +1,1186 @@
+//------------------Arms base HUH Sprites------------------
+//This is where the FPLegs will be lit
+brightmap sprite YLEGA0
+{
+	map "BRIGHTMAPS/LEGS/YLEGA0.png"
+}
+brightmap sprite YLEGC0
+{
+	map "BRIGHTMAPS/LEGS/YLEGC0.png"
+}
+brightmap sprite YLEGD0
+{
+	map "BRIGHTMAPS/LEGS/YLEGD0.png"
+}
+brightmap sprite YLEGE0
+{
+	map "BRIGHTMAPS/LEGS/YLEGE0.png"
+}
+brightmap sprite YLEGF0
+{
+	map "BRIGHTMAPS/LEGS/YLEGF0.png"
+}
+brightmap sprite YLEGG0
+{
+	map "BRIGHTMAPS/LEGS/YLEGG0.png"
+}
+brightmap sprite YLEGH0
+{
+	map "BRIGHTMAPS/LEGS/YLEGH0.png"
+}
+brightmap sprite YLEGJ0
+{
+	map "BRIGHTMAPS/LEGS/YLEGJ0.png"
+}
+brightmap sprite YLEGK0
+{
+	map "BRIGHTMAPS/LEGS/YLEGK0.png"
+}
+brightmap sprite YLEGL0
+{
+	map "BRIGHTMAPS/LEGS/YLEGL0.png"
+}
+brightmap sprite YLEGM0
+{
+	map "BRIGHTMAPS/LEGS/YLEGM0.png"
+}
+brightmap sprite YLEGN0
+{
+	map "BRIGHTMAPS/LEGS/YLEGN0.png"
+}
+brightmap sprite YLEGO0
+{
+	map "BRIGHTMAPS/LEGS/YLEGO0.png"
+}
+brightmap sprite YLEGP0
+{
+	map "BRIGHTMAPS/LEGS/YLEGP0.png"
+}
+brightmap sprite YLEGQ0
+{
+	map "BRIGHTMAPS/LEGS/YLEGQ0.png"
+}
+brightmap sprite YLEGR0
+{
+	map "BRIGHTMAPS/LEGS/YLEGR0.png"
+}
+//This section is for the slide move
+brightmap sprite YSLDA0
+{
+	map "BRIGHTMAPS/SLIDE/YSLDA0.png"
+}
+brightmap sprite YSLDB0
+{
+	map "BRIGHTMAPS/SLIDE/YSLDB0.png"
+}
+brightmap sprite YSLDC0
+{
+	map "BRIGHTMAPS/SLIDE/YSLDC0.png"
+}
+brightmap sprite YSLDD0
+{
+	map "BRIGHTMAPS/SLIDE/YSLDD0.png"
+}
+//This section is for the kick move
+brightmap sprite YKCKC0
+{
+	map "BRIGHTMAPS/WEAPONS/KICK/YKCKC0.png"
+}
+brightmap sprite YKCKD0
+{
+	map "BRIGHTMAPS/WEAPONS/KICK/YKCKD0.png"
+}
+brightmap sprite YKCKE0
+{
+	map "BRIGHTMAPS/WEAPONS/KICK/YKCKE0.png"
+}
+brightmap sprite YKCKF0
+{
+	map "BRIGHTMAPS/WEAPONS/KICK/YKCKF0.png"
+}
+brightmap sprite YKCKG0
+{
+	map "BRIGHTMAPS/WEAPONS/KICK/YKCKG0.png"
+}
+//This is where the light for the slide kick is.
+brightmap sprite YSLKB0
+{
+	map "BRIGHTMAPS/SLIDEKICK/YSLKB0.png"
+}
+brightmap sprite YSLKC0
+{
+	map "BRIGHTMAPS/SLIDEKICK/YSLKC0.png"
+}
+brightmap sprite YSLKD0
+{
+	map "BRIGHTMAPS/SLIDEKICK/YSLKC0.png"
+}
+brightmap sprite YSLKE0
+{
+	map "BRIGHTMAPS/SLIDEKICK/YSLKC0.png"
+}
+brightmap sprite YSLKF0
+{
+	map "BRIGHTMAPS/SLIDEKICK/YSLKF0.png"
+}
+brightmap sprite YSLKG0
+{
+	map "BRIGHTMAPS/SLIDEKICK/YSLKG0.png"
+}
+//--------------------Weapon HUD Sprites-----------------------
+//This is the section for the Buster HUD sprites.
+brightmap sprite YBSTA0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTA0.png"
+}
+brightmap sprite YBSTB0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTB0.png"
+}
+brightmap sprite YBSTC0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTC0.png"
+}
+brightmap sprite YBSTD0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTD0.png"
+}
+brightmap sprite YBSTE0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTE0.png"
+}
+brightmap sprite YBSTF0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTF0.png"
+}
+brightmap sprite YBSTG0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTG0.png"
+}
+brightmap sprite YBSTH0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTH0.png"
+}
+brightmap sprite YBSTI0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTI0.png"
+}
+brightmap sprite YBSTJ0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTJ0.png"
+}
+brightmap sprite YBSTK0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTK0.png"
+}
+brightmap sprite YBSTL0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTL0.png"
+}
+brightmap sprite YBSTM0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTM0.png"
+}
+brightmap sprite YBSTN0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTN0.png"
+}
+brightmap sprite YBSTO0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTO0.png"
+}
+brightmap sprite YBSTP0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTP0.png"
+}
+brightmap sprite YBSTQ0
+{
+	map "BRIGHTMAPS/WEAPONS/BUSTER/YBSTQ0.png"
+}
+//This will go for the Sharpsaw HUD sprites
+brightmap sprite SHAWE0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWE0.png"
+}
+brightmap sprite SHAWF0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWE0.png"
+}
+brightmap sprite SHAWG0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWG0.png"
+}
+brightmap sprite SHAWK0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWK0.png"
+}
+brightmap sprite SHAWQ0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWK0.png"
+}
+brightmap sprite SHAWR0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWR0.png"
+}
+brightmap sprite SHAWU0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWU0.png"
+}
+brightmap sprite SHAWV0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWU0.png"
+}
+brightmap sprite SHAWW0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWU0.png"
+}
+brightmap sprite SHAWX0
+{
+	map "BRIGHTMAPS/WEAPONS/SHARPSAW/SHAWU0.png"
+}
+//This Section is for the Sluggershard
+brightmap sprite SHSSA0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSA0.png"
+}
+brightmap sprite SHSSB0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSB0.png"
+}
+brightmap sprite SHSSC0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSC0.png"
+}
+brightmap sprite SHSSD0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSD0.png"
+}
+brightmap sprite SHSSE0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSE0.png"
+}
+brightmap sprite SHSSF0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSF0.png"
+}
+brightmap sprite SHSSG0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSG0.png"
+}
+brightmap sprite SHSSH0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSH0.png"
+}
+brightmap sprite SHSSI0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSI0.png"
+}
+brightmap sprite SHSSJ0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSJ0.png"
+}
+brightmap sprite SHSSK0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSK0.png"
+}
+brightmap sprite SHSSL0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSL0.png"
+}
+brightmap sprite SHSSM0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSM0.png"
+}
+brightmap sprite SHSSN0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSN0.png"
+}
+brightmap sprite SHSSO0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSO0.png"
+}
+brightmap sprite SHSSP0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSP0.png"
+}
+brightmap sprite SHSSQ0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSQ0.png"
+}
+brightmap sprite SHSSR0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSR0.png"
+}
+brightmap sprite SHSSS0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSS0.png"
+}
+brightmap sprite SHSST0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSST0.png"
+}
+brightmap sprite SHSSU0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSU0.png"
+}
+brightmap sprite SHSSV0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSV0.png"
+}
+brightmap sprite SHSSW0
+{
+	map "BRIGHTMAPS/WEAPONS/SLUGGERSHARD/SHSSW0.png"
+}
+//This section is for the Quadbuck HUD sprites
+brightmap sprite QBCKA0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKA0.png"
+}
+brightmap sprite QBCKB0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKB0.png"
+}
+brightmap sprite QBCKC0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKC0.png"
+}
+brightmap sprite QBCKD0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKD0.png"
+}
+brightmap sprite QBCKE0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKE0.png"
+}
+brightmap sprite QBCKF0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKF0.png"
+}
+brightmap sprite QBCKG0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKG0.png"
+}
+brightmap sprite QBCKH0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKH0.png"
+}
+brightmap sprite QBCKI0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKI0.png"
+}
+brightmap sprite QBCKJ0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKJ0.png"
+}
+brightmap sprite QBCKK0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKK0.png"
+}
+brightmap sprite QBCKL0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKL0.png"
+}
+brightmap sprite QBCKM0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKM0.png"
+}
+brightmap sprite QBCKN0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKN0.png"
+}
+brightmap sprite QBCKO0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKO0.png"
+}
+brightmap sprite QBCKP0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKP0.png"
+}
+brightmap sprite QBCKQ0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKQ0.png"
+}
+brightmap sprite QBCKR0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKR0.png"
+}
+brightmap sprite QBCKS0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKS0.png"
+}
+brightmap sprite QBCKT0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKT0.png"
+}
+brightmap sprite QBCKU0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKU0.png"
+}
+brightmap sprite QBCKV0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKV0.png"
+}
+brightmap sprite QBCKW0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKW0.png"
+}
+brightmap sprite QBCKX0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKX0.png"
+}
+brightmap sprite QBCKY0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKY0.png"
+}
+brightmap sprite QBCKZ0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCKZ0.png"
+}
+brightmap sprite QBCRA0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRA0.png"
+}
+brightmap sprite QBCRB0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRB0.png"
+}
+brightmap sprite QBCRC0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRC0.png"
+}
+brightmap sprite QBCRD0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRD0.png"
+}
+brightmap sprite QBCRE0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRE0.png"
+}
+brightmap sprite QBCRF0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRF0.png"
+}
+brightmap sprite QBCRG0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRG0.png"
+}
+brightmap sprite QBCRH0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRH0.png"
+}
+brightmap sprite QBCRI0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRI0.png"
+}
+brightmap sprite QBCRJ0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRJ0.png"
+}
+brightmap sprite QBCRK0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRK0.png"
+}
+brightmap sprite QBCRL0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRL0.png"
+}
+brightmap sprite QBCRM0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRM0.png"
+}
+brightmap sprite QBCRN0
+{
+	map "BRIGHTMAPS/WEAPONS/QUADBUCK/QBCRN0.png"
+}
+//This section is for the Siege Turret HUD sprites
+brightmap sprite CHGNC0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNC0.png"
+}
+brightmap sprite CHGND0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGND0.png"
+}
+brightmap sprite CHGNE0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNE0.png"
+}
+brightmap sprite CHGNF0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNE0.png"
+}
+brightmap sprite CHGNG0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNE0.png"
+}
+brightmap sprite CHGNH0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNH0.png"
+}
+brightmap sprite CHGNI0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNE0.png"
+}
+brightmap sprite CHGNJ0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNJ0.png"
+}
+brightmap sprite CHGNK0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNK0.png"
+}
+brightmap sprite CHGNL0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNL0.png"
+}
+brightmap sprite CHGNM0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNM0.png"
+}
+brightmap sprite CHGNN0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNN0.png"
+}
+brightmap sprite CHGNO0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNO0.png"
+}
+brightmap sprite CHGNP0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNP0.png"
+}
+brightmap sprite CHGNQ0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNQ0.png"
+}
+brightmap sprite CHGNR0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNR0.png"
+}
+brightmap sprite CHGNS0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNR0.png"
+}
+brightmap sprite CHGNT0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNT0.png"
+}
+brightmap sprite CHGNU0
+{
+	map "BRIGHTMAPS/WEAPONS/SIEGETURRET/CHGNU0.png"
+}
+//This is where the Clam Launcher HUD Sprites are lit
+brightmap sprite CLAUB0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUB0.png"
+}
+brightmap sprite CLAUC0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUC0.png"
+}
+brightmap sprite CLAUD0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUD0.png"
+}
+brightmap sprite CLAUE0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUE0.png"
+}
+brightmap sprite CLAUF0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUF0.png"
+}
+brightmap sprite CLAUG0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUG0.png"
+}
+brightmap sprite CLAUH0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUH0.png"
+}
+brightmap sprite CLAUI0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUI0.png"
+}
+brightmap sprite CLAUJ0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUJ0.png"
+}
+brightmap sprite CLAUK0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUK0.png"
+}
+brightmap sprite CLAUL0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUL0.png"
+}
+brightmap sprite CLAUS0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUS0.png"
+}
+brightmap sprite CLAUT0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUT0.png"
+}
+brightmap sprite CLAUU0
+{
+	map "BRIGHTMAPS/WEAPONS/CLAMLAUNCHER/CLAUU0.png"
+}
+//These here are where the FERRA Buster HUD Sprites are lit
+brightmap sprite FEBTA0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTA0.png"
+}
+brightmap sprite FEBTB0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTB0.png"
+}
+brightmap sprite FEBTC0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTC0.png"
+}
+brightmap sprite FEBTD0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTD0.png"
+}
+brightmap sprite FEBTE0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTE0.png"
+}
+brightmap sprite FEBTF0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTF0.png"
+}
+brightmap sprite FEBTG0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTG0.png"
+}
+brightmap sprite FEBTH0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTH0.png"
+}
+brightmap sprite FEBTI0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTI0.png"
+}
+brightmap sprite FEBTJ0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTJ0.png"
+}
+brightmap sprite FEBTK0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTK0.png"
+}
+brightmap sprite FEBTL0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTL0.png"
+}
+brightmap sprite FEBTM0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTM0.png"
+}
+brightmap sprite FEBTN0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTN0.png"
+}
+brightmap sprite FEBTO0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTO0.png"
+}
+brightmap sprite FEBTP0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTP0.png"
+}
+brightmap sprite FEBTQ0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTQ0.png"
+}
+brightmap sprite FEBTR0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTR0.png"
+}
+brightmap sprite FEBTS0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTS0.png"
+}
+brightmap sprite FEBTT0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTT0.png"
+}
+brightmap sprite FEBTU0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTU0.png"
+}
+brightmap sprite FEBTV0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTV0.png"
+}
+brightmap sprite FEBTW0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTW0.png"
+}
+brightmap sprite FEBTX0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTX0.png"
+}
+brightmap sprite FEBTY0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTY0.png"
+}
+brightmap sprite FEBTZ0
+{
+	map "BRIGHTMAPS/WEAPONS/FERRABUSTER/FEBTZ0.png"
+}
+//This is where the Ultra Beam HUD sprites are lit
+brightmap sprite ULTBG0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBG0.png"
+}
+brightmap sprite ULTBH0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBH0.png"
+}
+brightmap sprite ULTBI0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBI0.png"
+}
+brightmap sprite ULTBJ0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBJ0.png"
+}
+brightmap sprite ULTBK0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBK0.png"
+}
+brightmap sprite ULTBL0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBL0.png"
+}
+brightmap sprite ULTBM0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBM0.png"
+}
+brightmap sprite ULTBN0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBN0.png"
+}
+brightmap sprite ULTBO0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBO0.png"
+}
+brightmap sprite ULTBP0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBP0.png"
+}
+brightmap sprite ULTBQ0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBQ0.png"
+}
+brightmap sprite ULTBR0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBR0.png"
+}
+brightmap sprite ULTBS0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBS0.png"
+}
+brightmap sprite ULTBT0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBT0.png"
+}
+brightmap sprite ULTBU0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBU0.png"
+}
+brightmap sprite ULTBV0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBV0.png"
+}
+brightmap sprite ULTBW0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBW0.png"
+}
+brightmap sprite ULTBX0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBX0.png"
+}
+brightmap sprite ULTBY0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBY0.png"
+}
+brightmap sprite ULTBZ0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTBZ0.png"
+}
+brightmap sprite ULTRA0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRA0.png"
+}
+brightmap sprite ULTRB0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRB0.png"
+}
+brightmap sprite ULTRC0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRC0.png"
+}
+brightmap sprite ULTRD0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRD0.png"
+}
+brightmap sprite ULTRE0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRE0.png"
+}
+brightmap sprite ULTRF0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRF0.png"
+}
+brightmap sprite ULTRG0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRG0.png"
+}
+brightmap sprite ULTRH0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRH0.png"
+}
+brightmap sprite ULTRI0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRI0.png"
+}
+brightmap sprite ULTRJ0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRJ0.png"
+}
+brightmap sprite ULTRK0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRK0.png"
+}
+brightmap sprite ULTRL0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRL0.png"
+}
+brightmap sprite ULTRM0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRM0.png"
+}
+brightmap sprite ULTRN0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRN0.png"
+}
+brightmap sprite ULTRO0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRO0.png"
+}
+brightmap sprite ULTRP0
+{
+	map "BRIGHTMAPS/WEAPONS/ULTRABEAM/ULTRP0.png"
+}
+//------------PICKUPS-----------------
+//Here goes the brightmaps for the weapon pickups
+brightmap sprite PBSTA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/PBSTA0.png"
+}
+brightmap sprite ULBMA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/ULBMA0.png"
+}
+brightmap sprite YCHGA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/YCHGA0.png"
+}
+brightmap sprite YCLAA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/YCLAA0.png"
+}
+brightmap sprite YFERA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/YFERA0.png"
+}
+brightmap sprite YQBKA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/YQBKA0.png"
+}
+brightmap sprite YSAWA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/YSAWA0.png"
+}
+brightmap sprite YSHSA0
+{
+	map "BRIGHTMAPS/PICKUPS/WEAPONS/YSHSA0.png"
+}
+//This will be where the ammo pickups are lit.
+brightmap sprite BCLPA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/BCLPA0.png"
+}
+brightmap sprite BCLPB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/BCLPA0.png"
+}
+brightmap sprite ISBXA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/ISBXA0.png"
+}
+brightmap sprite ISBXB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/ISBXA0.png"
+}
+brightmap sprite ISBXC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/ISBXA0.png"
+}
+brightmap sprite ISCPA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/ISCPA0.png"
+}
+brightmap sprite ISCPB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/ISCPA0.png"
+}
+brightmap sprite ISCPC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/ISCPA0.png"
+}
+brightmap sprite PCBXA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/PCBXA0.png"
+}
+brightmap sprite PCBXB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/PCBXA0.png"
+}
+brightmap sprite PCBXC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/PCBXA0.png"
+}
+brightmap sprite PCCLA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/PCCLA0.png"
+}
+brightmap sprite PCCLB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/PCCLA0.png"
+}
+brightmap sprite PCCLC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/PCCLA0.png"
+}
+brightmap sprite UPBXA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPBXA0.png"
+}
+brightmap sprite UPBXB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPBXA0.png"
+}
+brightmap sprite UPBXC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPBXA0.png"
+}
+brightmap sprite UPBXD0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPBXA0.png"
+}
+brightmap sprite UPCPA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPCPA0.png"
+}
+brightmap sprite UPCPB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPCPA0.png"
+}
+brightmap sprite UPCPC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPCPA0.png"
+}
+brightmap sprite UPCPD0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/UPCPA0.png"
+}
+brightmap sprite WBBXA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/WBBXA0.png"
+}
+brightmap sprite WBBXB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/WBBXA0.png"
+}
+brightmap sprite WBBXC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/WBBXA0.png"
+}
+brightmap sprite WBCPA0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/WBCPA0.png"
+}
+brightmap sprite WBCPB0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/WBCPA0.png"
+}
+brightmap sprite WBCPC0
+{
+	map "BRIGHTMAPS/PICKUPS/AMMO/WBCPA0.png"
+}
+//And here goes the lighting for the powerups.
+brightmap sprite ABAGA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/ABAGA0.png"
+}
+brightmap sprite AMAPA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite AMAPB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite AMAPC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite AMAPD0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite NUPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSA0.png"
+}
+brightmap sprite GGPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSB0.png"
+}
+brightmap sprite GGPUB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSC0.png"
+}
+brightmap sprite GGPUC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite GGPUD0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite GGPUE0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite RCPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSB0.png"
+}
+brightmap sprite RCPUB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSC0.png"
+}
+brightmap sprite RCPUC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite RCPUD0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite RCPUE0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite HBPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSB0.png"
+}
+brightmap sprite HBPUB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSC0.png"
+}
+brightmap sprite HBPUC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite ISPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSB0.png"
+}
+brightmap sprite ISPUB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSC0.png"
+}
+brightmap sprite ISPUC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite ISPUD0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite ISPUE0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite SLPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSB0.png"
+}
+brightmap sprite SLPUB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSC0.png"
+}
+brightmap sprite SLPUC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite PCPUA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSB0.png"
+}
+brightmap sprite PCPUB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSC0.png"
+}
+brightmap sprite PCPUC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite PCPUD0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite PCPUE0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/CAPSD0.png"
+}
+brightmap sprite AMAPA0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite AMAPB0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite AMAPC0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite AMAPD0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/AMAPA0.png"
+}
+brightmap sprite MMKZE0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/MMKZE0.png"
+}
+brightmap sprite MMKZF0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/MMKZF0.png"
+}
+brightmap sprite MMKZG0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/MMKZG0.png"
+}
+brightmap sprite MMKZH0
+{
+	map "BRIGHTMAPS/PICKUPS/POWERUPS/MMKZG0.png"
+}

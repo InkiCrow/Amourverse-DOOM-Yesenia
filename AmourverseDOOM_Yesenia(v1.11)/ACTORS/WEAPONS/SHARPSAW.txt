@@ -1,0 +1,99 @@
+ACTOR SharpsawGet : Inventory
+{
+	+HUBPOWER
+	+UNDROPPABLE
+	-INVBAR
+	Inventory.MaxAmount 1
+}
+
+ACTOR Sharpsaw : YeseniaArms Replaces Chainsaw 22000
+{
+	Weapon.SelectionOrder 9
+	Weapon.BobSpeed 2.0
+	Weapon.BobRangeX 0.5
+	Weapon.BobRangeY 0.3
+	Inventory.Icon "YSAWA0"
+	Inventory.PickupMessage "Picked up the Sharpsaw!"
+	+MELEEWEAPON
+	
+	States
+	{
+		Spawn:
+		YSAW A 1
+		Loop
+		
+		Select:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablepickuplines") == 0, 3)
+		TNT1 A 1 A_JumpIfInventory("SharpsawGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/sawget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("SharpsawGet", 1)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablelegs") == 0, 2)
+		TNT1 A 0 A_Overlay(-10, "FirstPersonLegsStand")
+		SHAW A 0 A_PlaySound("sharpsaw/pullzip", CHAN_WEAPON, 0.5)
+		SHAW ABC 2
+		TNT1 A 0 A_PlaySound("sharpsaw/select", CHAN_BODY, 0.7)
+		SHAW CBADEF 2 A_Raise(10)
+		Wait
+		
+
+		
+		Ready:
+		TNT1 A 0 A_JumpIfInventory("IsClimbing", 1, "LedgeGrab")
+		TNT1 A 0 A_PlaySound ("sharpsaw/idle", CHAN_WEAPON, 0.5)
+		SHAW FG 2 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3)
+		Loop
+		
+		Deselect:
+		TNT1 A 0 A_PlaySound ("sharpsaw/deselect", CHAN_WEAPON, 0.5)
+		SHAW HIJ 2 A_Lower(25)
+		Wait
+		
+		Fire:
+		SHAW KLMN 2 
+		Goto Hold
+		
+		Hold:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		//TNT1 A 0 A_PlaySound("DSSAWFUL", CHAN_WEAPON, 1)
+		SHAW OP 1 A_Saw("sharpsaw/attack", "sharpsaw/hit", 3, "SharpsawPuff", SF_NOPULLIN|SF_NORANDOM, 100)
+		TNT1 A 0 A_Refire
+		Goto Reprepare
+		
+		AltFire:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		SHAW QRST 2
+		TNT1 A 0 A_PlaySound("sharpsaw/swing", CHAN_BODY, 0.5)
+		SHAW UV 2
+		SHAW W 2 A_CustomPunch(35, FALSE, CPF_DAGGER, "SharpSwingPuff", 90)
+		SHAW XJ 2
+		Goto Reselect
+		
+		
+		
+		
+		Reprepare:
+		//TNT1 A 0 A_PlaySound("CSAWSTAT", CHAN_WEAPON, 0.8)
+		SHAW MHG 2
+		Goto Ready
+		
+		Reselect:
+		//TNT1 A 0 A_PlaySound("CSAWSTAT", CHAN_WEAPON, 0.8)
+		SHAW JIHG 2
+		Goto Ready
+		
+		User1:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Kick")
+		Goto Ready
+		
+		User2:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Slide")
+		Goto Ready
+		
+		User3:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "GroundSlam")
+		Goto Ready
+	}
+}
