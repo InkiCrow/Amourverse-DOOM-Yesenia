@@ -1,0 +1,37 @@
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "Yesenia's Mod Options", "YeseniaOptions"
+}
+
+OptionMenu "YeseniaOptions"
+{
+	Title "Yesenia's Mod Options"
+	StaticText ""
+	Option "Enable Leg Visibility", "y_enablelegs", "EnableOption"
+	StaticText "This option lets you see your legs and feet looking down."
+	StaticText ""
+	Option "Enable Footstep Sounds", "y_enablefootstepsounds", "EnableOption"
+	StaticText "Enables footstep sounds to play when running."
+	StaticText ""
+	Option "Enable Pickup Lines", "y_enablepickuplines", "EnableOption"
+	StaticText "Enable Yesenia to say stuff when she picks up her favorite weapons."
+	StaticText ""
+	StaticText ""
+	StaticText "Ability options:"
+	StaticText ""
+	Option "Allow Sliding", "y_enableslide", "YesNoOption"
+	Option "Allow Kicking", "y_enablekick", "YesNoOption"
+	Option "Allow Ground Slam", "y_enablegroundslam", "YesNoOption"
+}
+
+OptionValue "EnableOption"
+{
+	1, "Enabled"
+	0, "Disabled"
+}
+
+OptionValue "YesNoOption"
+{
+	1, "Yes"
+	0, "No"
+}

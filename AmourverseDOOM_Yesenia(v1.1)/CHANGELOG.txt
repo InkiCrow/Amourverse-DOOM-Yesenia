@@ -1,0 +1,32 @@
+-------------|Amourverse DOOM: Yesenia|----------------------
+Changelog Version 1.1:
+- Ice Slugs deprecated, Water Bucks renamed to Water Shells.
+- Sluggershard and Quadbuck use the same ammo type.
+- Quadbuck and Sluggershard has been switched.
+- Increased Sluggershard's damage.
+- Siege Turret's recoil reduced.
+- Sharpsaw altfire damage increased.
+- New Slide Kick and Ground Slam moves added.
+- Buster shots force enemies to their Pain state.
+- Replaced Buster Pistol's Altfire. From a 3-round burst to a 1-round bigger shot.
+- Added puff for Siege Turret.
+- Added attack decals for Siege Turret.
+- Leg animation tweaked.
+- Added dynamic lighting to weapon effects and items.
+- Legs, abilities and pickup lines can be disabled in the Options menu.
+
+Changelog Version 1.02:
+- Buffed both firing modes for te FERRA Buster.
+- Increased both blast damage and launch range for both firing modes and reduced primary fire bounce times for Clam Launcher.
+- Tweaked sprite offsets for Buster Pistol and Sluggershard.
+- Changed color map for the Mimikyum Z powerup.
+- Reduced ammo pickup amounts for Iron Bullet, Water Buck and Iron Slug boxes.
+- Added new option to disable footstep sounds.
+
+Changelog Version 1.01:
+- Quadbuck can sometimes spawn instead of the Sluggershard in Ultimate Doom.
+- Sharpsaw swing attack buffed.
+- Slight graphic change.
+
+Changelog Version 1.0:
+- Initial Release

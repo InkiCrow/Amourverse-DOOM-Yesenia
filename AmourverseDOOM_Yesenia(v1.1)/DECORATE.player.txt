@@ -1,0 +1,58 @@
+ACTOR YeseniaPlayer : ClimbingPlayer
+{
+	PainChance 255
+	Speed 1
+	Player.DisplayName "Yesenia"
+	Player.Face "YES"
+	Player.JumpZ 12.0
+	Player.SoundClass "yeseniavoice"
+
+	Player.StartItem "Buster"
+	Player.StartItem "ScarfFists"
+	Player.StartItem "BusterClip" 62
+	Player.StartItem "IceSlugs" 12
+	Player.StartItem "SlugsLoaded" 1
+	Player.StartItem "WaterBucks" 8
+	Player.Startitem "ExplosiveClams", 2
+	Player.StartItem "PlasmaCells", 20
+
+	Player.WeaponSlot 1, ScarfFists, Sharpsaw
+	Player.WeaponSlot 2, Buster
+	Player.WeaponSlot 3, Quadbuck, Sluggershard
+	Player.WeaponSlot 4, SiegeTurret
+	Player.WeaponSlot 5, ClamLauncher
+	Player.WeaponSlot 6, FerraBuster
+	Player.WeaponSlot 7, UltraBeam
+	
+	States
+	{
+		Spawn:
+		YPLA AB 12
+		Loop
+		See:
+		YPLA CDEF 4 
+		Loop
+		Missile:
+		YPLA G 12
+		Goto Spawn
+		Melee:
+		YPLA G 6 BRIGHT
+		Goto Missile
+		Pain:
+		YPLA H 4 
+		YPLA H 4 A_Pain
+		Goto Spawn
+		Death:
+		YPLA H 8
+		YPLA I 8 A_PlayerScream
+		YPLA J 8 A_NoBlocking
+		YPLA J -1
+		Stop
+		XDeath:
+		YPLA H 8
+		YPLA I 8 A_PlayerScream
+		YPLA J 8 A_NoBlocking
+		YPLA J -1
+		Stop
+	}
+}

@@ -1,0 +1,155 @@
+ACTOR QuadbuckGet : Inventory
+{
+	+HUBPOWER
+	+UNDROPPABLE
+	-INVBAR
+	Inventory.MaxAmount 1
+}
+
+ACTOR WaterBuckCasing
+{
+	radius 4
+	height 6
+	speed 5
+	scale 0.5
+	bouncesound "quadbuck/casing"
+	projectile
+	-NOGRAVITY
+	+BOUNCEONACTORS
+	+BOUNCEONCEILINGS
+	+DONTSPLASH
+	Gravity 0.6
+	bouncetype Doom
+	bouncecount 6
+	bouncefactor 0.9
+	damagetype nope
+	States
+	{
+		Spawn:
+		QBCS A 1
+		Goto Spin
+		
+		Spin:
+		QBCS ABCD 2
+		Loop
+		
+		Death:
+		QBCS A 0 A_SpawnItemEx("RestedWaterBuckCasing")
+		Stop
+	}
+}
+
+ACTOR RestedWaterBuckCasing
+{
+	-NOGRAVITY
+	Scale 0.5
+	States
+	{
+		Spawn:
+		QBCS E 1
+		Loop
+	}
+}
+
+ACTOR Quadbuck : YeseniaArms Replaces Shotgun 24000
+{
+	Weapon.SelectionOrder 12
+	Weapon.AmmoType "WaterShells"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 8
+	Weapon.BobSpeed 2.0
+	Weapon.BobRangeX 0.5
+	Weapon.BobRangeY 0.3
+	Inventory.Icon "YQBKA0"
+	Inventory.PickupMessage "Picked up the Quadbuck!"
+	+NOAUTOFIRE
+	+NOAUTOAIM
+	States
+	{
+		Spawn:
+		YQBK A 1
+		Loop
+		
+		Select:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablepickuplines") == 0, 3)
+		TNT1 A 0 A_JumpIfInventory("QuadbuckGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/quadget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("QuadbuckGet", 1)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablelegs") == 0, 2)
+		TNT1 A 0 A_Overlay(-10, "FirstPersonLegsStand")
+		QBCK ABC 2
+		QBCK D 2 A_PlaySound("slugshrd/select", CHAN_WEAPON, 0.5)
+		TNT1 A 0 A_Raise(10)
+		Wait
+		
+		Deselect:
+		TNT1 A 0 A_RemoveLight("quadflash")
+		QBCR KLMN 2 A_Lower(25)
+		Wait
+		
+		Ready:
+		TNT1 A 0 A_JumpIfInventory("IsClimbing", 1, "LedgeGrab")
+		QBCK E 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3)
+		Loop
+		
+		Fire:
+		TNT1 A 0 A_AttachLight("quadflash", "PointLight", "4DA6FF", 50, 70, 0)
+		QBCK F 1 BRIGHT A_PlaySound("quadbuck/shot", CHAN_WEAPON, 1.5)
+		QBCK G 1 BRIGHT A_FireBullets(3, 3, 9, 5, "WaterBuckPuff", FBF_USEAMMO)
+		TNT1 A 0 A_RemoveLight("quadflash")
+		QBCK H 2
+		TNT1 A 0 A_PlaySound("quadbuck/spin", CHAN_BODY, 0.7)
+		QBCK IJ 2
+		TNT1 A 0 A_FireCustomMissile("WaterBuckCasing", 0, 0, random(80,40), CMF_AIMDIRECTION, random(-15,45))
+		QBCK KLMN 2
+		Goto Ready
+		
+		AltFire:
+		TNT1 A 0 A_JumpIfInventory("PowerInfiniteAmmo", 1, "QuadShot")
+		TNT1 A 0 A_JumpIfInventory("WaterShells", 4, "QuadShot")
+		Goto Ready
+		
+		QuadShot:
+		TNT1 A 0 A_AttachLight("quadflash", "PointLight", "4DA6FF", 70, 100, 0)
+		QBCK O 1 BRIGHT A_PlaySound("quadbuck/suprshot", CHAN_WEAPON, 1.5)
+		QBCK P 1 BRIGHT A_FireBullets(8, 8, 36, 7, "WaterBuckPuff", 0)
+		TNT1 A 0 A_JumpIfInventory("PowerInfiniteAmmo", 1, 2)
+		TNT1 A 0 A_TakeInventory("WaterShells", 4)
+		TNT1 A 0 A_RemoveLight("quadflash")
+		QBCK RST 2
+		TNT1 A 0 A_PlaySound("quadbuck/open", CHAN_BODY, 0.8)
+		QBCK UV 2
+		TNT1 A 0 A_FireCustomMissile("WaterBuckCasing", 0, 0, random(80,40), CMF_AIMDIRECTION, random(-25,25))
+		TNT1 A 0 A_FireCustomMissile("WaterBuckCasing", 0, 0, random(80,40), CMF_AIMDIRECTION, random(-25,25))
+		TNT1 A 0 A_FireCustomMissile("WaterBuckCasing", 0, 0, random(80,40), CMF_AIMDIRECTION, random(-25,25))
+		TNT1 A 0 A_FireCustomMissile("WaterBuckCasing", 0, 0, random(80,40), CMF_AIMDIRECTION, random(-25,25))
+		QBCK W 4
+		QBCK XYZ 2
+		TNT1 A 0 A_PlaySound("quadbuck/in", CHAN_BODY, 0.6)
+		QBCR AB 2
+		TNT1 A 0 A_PlaySound("quadbuck/close", CHAN_BODY, 0.8)
+		QBCR CDEFG 2
+		TNT1 A 0 A_PlaySound("quadbuck/spin", CHAN_BODY, 0.7)
+		QBCR HIJ 2
+		Goto Ready
+		
+		Reselect:
+		QBCR NMLK 2
+		Goto Ready
+		
+		User1:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Kick")
+		Goto Ready
+		
+		User2:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Slide")
+		Goto Ready
+		
+		User3:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "GroundSlam")
+		Goto Ready
+	}
+}

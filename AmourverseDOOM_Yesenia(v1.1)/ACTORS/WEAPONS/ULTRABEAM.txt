@@ -1,0 +1,284 @@
+ACTOR UltraBeamGet : Inventory
+{
+	+HUBPOWER
+	+UNDROPPABLE
+	-INVBAR
+	Inventory.MaxAmount 1
+}
+
+ACTOR UB_IsShotLeft : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
+ACTOR UltraBeamSpray
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	RenderStyle Add
+	DamageType "BFGSplash"
+	States
+	{
+		Spawn:
+		UBSP A 2 BRIGHT
+		Death:
+		UBSP BCDEF 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR UltraBeamBlast
+{
+	Scale 1
+	RenderStyle Add
+	DamageType "Extreme"
+	Decal "Scorch"
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+ALWAYSPUFF
+	+FORCEDECAL
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ultrablast", "PointLight", "B3FFD9", 90, 150, 0)
+		UBBL ABCD 2 BRIGHT
+		Death:
+		UBBL E 2 BRIGHT
+		{
+			A_Explode(100, 100, 0);
+			A_BFGSpray("UltraBeamSpray", 40, 30, 90, 1524, 50, 0);
+			A_PlaySound("ultrbeam/explode", CHAN_AUTO, 1);
+		}
+		UBBL FGHIJ 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ultrablast")
+		Stop
+	}
+}
+
+ACTOR UltraBeamChargedImpact
+{
+	Scale 1
+	RenderStyle Add
+	DamageType "Extreme"
+	Decal "Scorch"
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+ALWAYSPUFF
+	+FORCEDECAL
+	+RANDOMIZE
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ultrablast", "PointLight", "B3FFD9", 90, 170, 0)
+		UBIP A 2 BRIGHT A_PlaySound("ferra/impact", CHAN_AUTO, 1)
+		Death:
+		UBIP B 2 BRIGHT
+		{
+			A_BFGSpray("UltraBeamSpray", 40, 30, 110, 1524, 50, 0);
+		}
+		UBIP CD 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ultrablast")
+		Stop
+	}
+}
+
+ACTOR UltraBeamTrail
+{
+	Scale 0.5
+	RenderStyle Add
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+RANDOMIZE
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ultratrail", "PointLight", "B3FFD9", 50, 90, 0)
+		UTRL A 2 BRIGHT
+		Death:
+		UTRL BCDEF 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ultratrail")
+		Stop
+	}
+}
+
+ACTOR UltraBeamChargedTrail
+{
+	Scale 1
+	RenderStyle Add
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+RANDOMIZE
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ultratrail", "PointLight", "B3FFD9", 50, 150, 0)
+		UTRL A 1 BRIGHT
+		Death:
+		UTRL BCDEF 1 BRIGHT
+		TNT1 A 0 A_RemoveLight("ultratrail")
+		Stop
+	}
+}
+
+ACTOR UltraBeam : YeseniaArms Replaces BFG9000
+{
+	Weapon.SelectionOrder 16
+	Weapon.AmmoType "ProtonCells"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 8
+	Weapon.BobSpeed 2.0
+	Weapon.BobRangeX 0.7
+	Weapon.BobRangeY 0.5
+	Inventory.Icon "ULBMA0"
+	Inventory.PickupMessage "You retrieved your Ultra Beam Blasters!"
+	+NOAUTOAIM
+	+NOAUTOFIRE
+	+ALT_USES_BOTH
+	States
+	{
+		Spawn:
+		ULBM A 1
+		Loop
+		
+		Select:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablepickuplines") == 0, 3)
+		TNT1 A 0 A_JumpIfInventory("UltraBeamGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/ultraget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("UltraBeamGet", 1)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablelegs") == 0, 2)
+		TNT1 A 0 A_Overlay(-10, "FirstPersonLegsStand")
+		ULTB ABCDEFG 2
+		TNT1 A 0 A_PlaySound("ultrbeam/select",CHAN_WEAPON, 0.7)
+		ULTB HIJKL 2 A_Raise(12)
+		Wait
+		
+		Deselect:
+		TNT1 A 0 A_RemoveLight("ultraflash")
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		ULTB LKJIHG 2 A_Lower(18)
+		Wait
+		
+		Reselect:
+		ULTB GHIJKL 2
+		Goto Ready
+		
+		Ready:
+		TNT1 A 0 A_JumpIfInventory("IsClimbing", 1, "LedgeGrab")
+		ULTB M 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3)
+		Loop
+		
+		Fire:
+		TNT1 A 0 A_PlaySound("ultrbeam/windup", CHAN_WEAPON, 1)
+		TNT1 A 0 A_AttachLight("ultraflash", "PointLight", "B3FFD9", 80, 120, 0)
+		ULTB NOP 3
+		Goto Hold
+		
+		Hold:
+		TNT1 A 0 A_JumpIfInventory("UB_IsShotLeft", 1, 9)
+		ULTB Q 2
+		ULTB R 2 BRIGHT
+		{
+			A_RailAttack(200, 20, TRUE, "green", "white", RGF_NOPIERCING|RGF_FULLBRIGHT, 0, "UltraBeamBlast", 0, 0, 0, 20, 0.1, 0, "UltraBeamTrail", 20, 100, 0);
+			A_PlaySound("ultrbeam/fire", CHAN_WEAPON, 1);
+			A_ZoomFactor(0.750);
+			A_Recoil(20);
+			A_GiveInventory("UB_IsShotLeft", 1);
+		}
+		ULTB ST 2 
+		TNT1 A 0 A_ZoomFactor(0.875)
+		ULTB UV 2 
+		TNT1 A 0 A_Jump(256, 8)
+		ULTB W 2 
+		ULTB X 2 BRIGHT
+		{
+			A_RailAttack(200, -20, TRUE, "green", "white", RGF_NOPIERCING|RGF_FULLBRIGHT, 0, "UltraBeamBlast", 0, 0, 0, 20, 0.1, 0, "UltraBeamTrail", 20, 100, 0);
+			A_PlaySound("ultrbeam/fire", CHAN_WEAPON, 1);
+			A_ZoomFactor(0.750);
+			A_Recoil(20);
+			A_TakeInventory("UB_IsShotLeft", 1);
+		}
+		ULTB YZ 2 
+		TNT1 A 0 A_ZoomFactor(0.875)
+		ULTR AB 2 
+		ULTB P 10 A_ZoomFactor(1)
+		TNT1 A 0 A_Refire
+		TNT1 A 0 A_PlaySound("ultrbeam/winddown", CHAN_BODY, 1)
+		TNT1 A 0 A_RemoveLight("ultraflash")
+		ULTB PONM 2
+		Goto Ready
+		
+		AltFire:
+		TNT1 A 0 A_JumpIfInventory("ProtonCells", 1, "ConfirmAltFire")
+		Goto Ready
+		
+		ConfirmAltFire:
+		TNT1 A 0 A_AttachLight("ultraflash", "PointLight", "B3FFD9", 80, 120, 0)
+		TNT1 A 0 A_PlaySound("ultrbeam/windup", CHAN_BODY, 1)
+		ULTB NOP 2 
+		TNT1 A 0 A_PlaySound("ultrbeam/chbegin", CHAN_WEAPON, 1)
+		ULTR CDCDEFEFGHGHIJIJ 2 
+		TNT1 A 0 A_PlaySound("ultrbeam/chfire", CHAN_BODY, 1)
+		Goto AltHold
+		
+		AltHold:
+		TNT1 A 0 A_JumpIfNoAmmo("EndAltFire")
+		ULTR K 1 BRIGHT
+		{
+			A_RailAttack(100, -40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_RailAttack(100, 40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_PlaySound("ultrbeam/chloop", CHAN_WEAPON, 1, true);
+			A_ZoomFactor(0.750);
+			A_Recoil(1);
+		}
+		ULTR L 1 BRIGHT
+		{
+			A_RailAttack(100, -40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_RailAttack(100, 40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_PlaySound("ultrbeam/chloop", CHAN_WEAPON, 1, true);
+			A_Recoil(1);
+		}
+		ULTR K 1 BRIGHT
+		{
+			A_RailAttack(100, -40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_RailAttack(100, 40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_PlaySound("ultrbeam/chloop", CHAN_WEAPON, 1, true);
+			A_Recoil(1);
+		}
+		ULTR L 1 BRIGHT
+		{
+			A_RailAttack(100, -40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_RailAttack(100, 40, FALSE, "green", "white", RGF_FULLBRIGHT, 0, "UltraBeamChargedImpact", 0, 0, 0, 20, 0.1, 0, "UltraBeamChargedTrail", 30, 100, 0);
+			A_PlaySound("ultrbeam/chloop", CHAN_WEAPON, 1, true);
+			A_Recoil(1);
+		}
+		TNT1 A 0 A_JumpIfInventory("PowerInfiniteAmmo", 1, 2)
+		TNT1 A 0 A_TakeInventory("ProtonCells", 1)
+		TNT1 A 0 A_Refire
+		Goto EndAltFire
+		
+		EndAltFire:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		ULTR MN 2 A_PlaySound("ultrbeam/chend", CHAN_WEAPON, 1, false)
+		TNT1 A 0 A_ZoomFactor(0.850)
+		ULTR OP 2 
+		TNT1 A 0 A_ZoomFactor(1)
+		ULTB PONM 2
+		TNT1 A 0 A_RemoveLight("ultraflash")
+		Goto Ready
+		
+		User1:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Kick")
+		Goto Ready
+		
+		User2:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Slide")
+		Goto Ready
+		
+		User3:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "GroundSlam")
+		Goto Ready
+	}
+}

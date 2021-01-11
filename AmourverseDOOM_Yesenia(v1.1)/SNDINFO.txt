@@ -1,0 +1,199 @@
+//Over here the sounds and voices for the player are found.
+$playersound yeseniavoice male *usefail YS_FAIL
+
+$RANDOM yesenia/hurt { hurt1 hurt2 hurt3 hurt4 hurt5 }
+hurt1 YS_HRT1
+hurt2 YS_HRT2
+hurt3 YS_HRT3
+hurt4 YS_HRT4
+hurt5 YS_HRT5
+$playeralias yeseniavoice male *pain100 yesenia/hurt
+$playeralias yeseniavoice male *pain75 *pain100
+$playeralias yeseniavoice male *pain50 *pain100
+
+$RANDOM yesenia/critical {crit1 crit2 crit3 }
+crit1 YS_CRT1
+crit2 YS_CRT2
+crit3 YS_CRT3
+$playeralias yeseniavoice male *pain25 yesenia/critical
+
+$playersound yeseniavoice male *death YS_DEAD
+$playersound yeseniavoice male *xdeath YS_DEAD
+
+$RANDOM yesenia/jump { jump1 jump2 jump3 }
+jump1 YS_JMP1
+jump2 YS_JMP2
+jump3 YS_JMP3
+$playeralias yeseniavoice male *jump yesenia/jump
+
+$playersound yeseniavoice male *land YS_LAND
+
+$playersound yeseniavoice male *grunt YS_LND2
+
+$RANDOM yesenia/sawget { sawget1 sawget2 sawget3 }
+sawget1 YS_SAW1
+sawget2 YS_SAW2
+sawget3 YS_SAW3
+
+$RANDOM yesenia/quadget { quadget1 quadget2 quadget3 }
+quadget1 YS_QBGT1
+quadget2 YS_QBGT2
+quadget3 YS_QBGT3
+
+$RANDOM yesenia/ultraget { pdcget1 pdcget2 pdcget3 }
+pdcget1 YS_BFG1
+pdcget2 YS_BFG2
+pdcget3 YS_BFG3
+
+$RANDOM yesenia/berserk { berkget1 berkget2 berkget3 }
+berkget1 YS_BRK1
+berkget2 YS_BRK2
+berkget3 YS_BRK3
+
+$RANDOM yesenia/punch { ora1 ora2 ora3 }
+ora1 YS_ORA1
+ora2 YS_ORA2
+ora3 YS_ORA3
+
+$RANDOM yesenia/shout { shout1 shout2 shout3 shout4 }
+shout1 YS_KICK1
+shout2 YS_KICK2
+shout3 YS_KICK3
+shout4 YS_KICK4
+
+//This is for the weapons
+
+$RANDOM yesenia/scarfpnch { SCFIS1 SCFIS2 SCFIS3 }
+SCFIS1 SCFIS1
+SCFIS2 SCFIS2
+SCFIS3 SCFIS3
+
+//Kick and slide sounds
+yesenia/kick KICK_SND
+yesenia/kickhit KHIT_SND
+yesenia/slide YSLIDE
+yesenia/climb CLMB_SND
+yesenia/slamdown GSLAM_SL
+yesenia/slamland GSLM_LND
+yesenia/slamhard GSLM_HRD
+//Footstep sounds
+$RANDOM yesenia/footstep { FOOTSTP1 FOOTSTP2 FOOTSTP3 FOOTSTP4 FOOTSTP5 }
+FOOTSTP1 FOOTSTP1
+FOOTSTP2 FOOTSTP2
+FOOTSTP3 FOOTSTP3
+FOOTSTP4 FOOTSTP4
+FOOTSTP5 FOOTSTP5
+//Buster sounds
+buster/shot BSTR_SHT
+BSTR_HIT BSTR_HIT
+buster/spin BSTR_SPN
+buster/grab BSTR_GRB
+buster/bigshot BSTR_BIG
+//Sharpsaw sounds
+sharpsaw/pullzip DSSAWZIP
+sharpsaw/swing DSSAWSNG
+sharpsaw/attack DSSAWFUL
+sharpsaw/hit DSSAWHIT
+sharpsaw/select DSSAWUP
+sharpsaw/deselect DSSAWDIE
+sharpsaw/idle DSSAWIDL
+$RANDOM sharpsaw/cut { DSSAWAL1 DSSAWAL2 DSSAWAL3 DSSAWAL4 DSSAWAL5 }
+DSSAWAL1 DSSAWAL1
+DSSAWAL2 DSSAWAL2
+DSSAWAL3 DSSAWAL3
+DSSAWAL4 DSSAWAL4
+DSSAWAL5 DSSAWAL5
+//Sluggershard sounds
+slugshrd/select SLSHSLCT
+slugshrd/cock SLSHCOCK
+slugshrd/shot SLSHSHOT
+slugshrd/impact SLSHIPCT
+slugshrd/release SLSHRLSE
+slugshrd/cockin SLSHCCK1
+slugshrd/cockout SLSHCCK2
+$RANDOM slugshrd/shell { SLSHSHL1 SLSHSHL2 SLSHSHL3 }
+SLSHSHL1 SLSHSHL1
+SLSHSHL2 SLSHSHL2
+SLSHSHL3 SLSHSHL3
+//Quadbuck sounds
+quadbuck/shot QBCKSHOT
+quadbuck/suprshot QBCKSSHT
+quadbuck/spin QBCKTURN
+quadbuck/open QBCKOPEN
+quadbuck/close QBCKCLSE
+quadbuck/in QBCKIN
+quadbuck/impact QBCKIPCT
+$RANDOM quadbuck/casing { QBCKCAS1 QBCKCAS3 QBCKCAS3 }
+QBCKCAS1 QBCKCAS1
+QBCKCAS2 QBCKCAS2
+QBCKCAS3 QBCKCAS3
+//Here goes the sounds for the Siege Turret
+siegetur/windup STWNDUP
+siegetur/winddown STWNDDWN
+siegetur/loop STFRLOOP
+siegetur/select STSLCT
+siegetur/siege STSGMODE
+siegetur/retract STRTRCT
+$RANDOM siegetur/fire { STFIRE1 STFIRE2 STFIRE3 STFIRE4 }
+STFIRE1 STFIRE1
+STFIRE2 STFIRE2
+STFIRE3 STFIRE3
+STFIRE4 STFIRE4
+$RANDOM siegetur/hit { ST_HIT1 ST_HIT2 ST_HIT3 }
+ST_HIT1 ST_HIT1
+ST_HIT2 ST_HIT2
+ST_HIT3 ST_HIT3
+//Here goes the sounds for the Clam Launcher.
+clamlaun/reload CLAM_RLD
+clamlaun/explode CLAM_EXP
+clamlaun/shot CLAM_SHT
+clamlaun/select CLAM_ENT
+//here goes the sounds for the FERRA Buster
+$RANDOM ferra/fire { fer1 fer2 fer3 }
+fer1 FB_FIRE1
+fer2 FB_FIRE2
+fer3 FB_FIRE3
+ferra/cooldown FB_CDOWN
+ferra/chargeup FB_CHRUP
+ferra/chargelp FB_CHLOP
+ferra/chargeex FB_CHREX
+ferra/select FB_SLCT
+ferra/chargefr FB_CFIRE
+ferra/chargedn FB_CHRDN
+$RANDOM ferra/impact { ferimp1 ferimp2 ferimp3 }
+ferimp1 FB_IPT1
+ferimp2 FB_IPT2
+ferimp3 FB_IPT3
+//Here goes the Ultra Beam sounds.
+ultrbeam/select UB_SLCT
+ultrbeam/windup UB_WUP
+ultrbeam/winddown UB_WDWN
+ultrbeam/fire UB_PFIRE
+ultrbeam/explode UB_PEXP
+ultrbeam/chbegin UB_SBEGN
+ultrbeam/chfire UB_SFIRE
+ultrbeam/chloop UB_SLOOP
+ultrbeam/chend UB_SEND
+//Here are the sounds for the pickups.
+pickup/clip CLIPUP
+pickup/mag MAGUP
+pickup/box BOXUP
+pickup/gun GOTGUN
+pickup/key GOTKEY
+pickup/potion GOTHEAL
+pickup/ptionkit GOTHEALS
+$RANDOM pickup/pokepuff { puff1 puff2 }
+puff1 PUFFYUM1
+puff2 PUFFYUM2
+pickup/shard GOTSHARD
+pickup/armor GOTARMOR
+pickup/bag GOTBAG
+pickup/ghostgem GOTGGEM
+pickup/candy GETCANDY
+pickup/boots GOTBOOTS
+pickup/inkball GOTMEGA
+pickup/infrared GOTINFRA
+pickup/cloak GETCLOAK
+pickup/automap GOTMAP
+pickup/mimikyum GOTZITEM
+pickup/skullkey GOTSKULL

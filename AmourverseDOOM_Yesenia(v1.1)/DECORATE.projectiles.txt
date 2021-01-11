@@ -1,0 +1,28 @@
+ACTOR BusterShot
+{
+	scale 0.5
+	height 0
+	radius 3
+	damage 2
+	speed 75
+	deathsound "BSTR_HIT"
+	Decal "BSTPLAS"
+	PROJECTILE
+	+FORCEPAIN
+	
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enableweapondynamiclighting") == 0, 2)
+		TNT1 A 0 A_AttachLight("busterflash", "PointLight", "B3FFD9", 10, 30, 0)
+		BSTB AB 2 Bright
+		Loop
+		
+		Death:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enableweapondynamiclighting") == 0, 2)
+		TNT1 A 0 A_AttachLight("busterflash", "PointLight", "B3FFD9", 30, 50, 0)
+		BSTB BCD 2 Bright
+		TNT1 A 0 A_RemoveLight("busterflash")
+		Stop
+	}
+}

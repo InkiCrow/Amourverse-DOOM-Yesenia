@@ -1,0 +1,7 @@
+//Additional options for the mod, mostly found in miscellaneous.
+user int y_enablefootstepsounds = 1;
+user int y_enablelegs = 1;
+user int y_enablepickuplines = 1;
+user int y_enableslide = 1;
+user int y_enablekick = 1;
+user int y_enablegroundslam = 1;
