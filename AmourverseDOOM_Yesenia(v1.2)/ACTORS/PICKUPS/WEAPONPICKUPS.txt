@@ -1,0 +1,192 @@
+ACTOR GhouliesPickup : CustomInventory Replaces Pistol
+{
+	
+	Inventory.Icon "YTGHA0"
+	Inventory.PickupMessage "Picked up the Twin Ghoulies!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YTGH A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_GiveInventory("TwinGhoulies", 1)
+		Stop
+	}
+}
+
+ACTOR SharpsawPickup : CustomInventory Replaces Chainsaw
+{
+	Inventory.Icon "YSAWA0"
+	Inventory.PickupMessage "Picked up the Sharpsaw!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YSAW A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 1 A_JumpIfInventory("SharpsawGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/sawget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("SharpsawGet", 1)
+		TNT1 A 0 A_GiveInventory("Sharpsaw", 1)
+		Stop
+	}
+}
+
+ACTOR QuadbuckPickup : CustomInventory Replaces Shotgun
+{
+	Inventory.Icon "YQBKA0"
+	Inventory.PickupMessage "Picked up the Quadbuck!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YQBK A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 0 A_JumpIfInventory("QuadbuckGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/quadget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("QuadbuckGet", 1)
+		TNT1 A 0 A_GiveInventory("Quadbuck", 1)
+		Stop
+	}
+}
+
+ACTOR SluggershardPickup : CustomInventory Replaces SuperShotgun
+{
+	Inventory.Icon "YSHSA0"
+	Inventory.PickupMessage "Picked up the Sluggershard!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YSHS A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 1 A_JumpIfInventory("SluggershardGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/slugrget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("SluggershardGet", 1)
+		TNT1 A 0 A_GiveInventory("Sluggershard", 1)
+		Stop
+	}
+}
+
+ACTOR SiegeTurretPickup : CustomInventory Replaces Chaingun
+{
+	Inventory.Icon "YCHGA0"
+	Inventory.PickupMessage "Picked up the Siege Turret Mk. IV!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YCHG A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 1 A_JumpIfInventory("SiegeGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/siegeget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("SiegeGet", 1)
+		TNT1 A 0 A_GiveInventory("SiegeTurret", 1)
+		Stop
+	}
+}
+
+ACTOR ClamLauncherPickup : CustomInventory Replaces RocketLauncher
+{
+	Inventory.Icon "YCLAA0"
+	Inventory.PickupMessage "Picked up the Clam Launcher!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YCLA A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 1 A_JumpIfInventory("ClamGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/clamget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("ClamGet", 1)
+		TNT1 A 0 A_GiveInventory("ClamLauncher", 1)
+		Stop
+	}
+}
+
+ACTOR FerraBusterPickup : CustomInventory Replaces PlasmaRifle
+{
+	Inventory.Icon "YFERA0"
+	Inventory.PickupMessage "Picked up the FERRA Buster Prototype!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		YFER A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 1 A_JumpIfInventory("FerraGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/ferraget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("FerraGet", 1)
+		TNT1 A 0 A_GiveInventory("FerraBuster", 1)
+		Stop
+	}
+}
+
+ACTOR UltraBeamPickup : CustomInventory Replaces BFG9000
+{
+	Inventory.Icon "ULBMA0"
+	Inventory.PickupMessage "You retrieved your Ultra Beam Blasters!"
+	Inventory.PickupSound "pickup/gun"
+	States
+	{
+		Spawn:
+		ULBM A 1
+		Loop
+		
+		PickUp:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 7)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 5)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 2, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 3)
+		TNT1 A 0 A_JumpIfInventory("UltraBeamGet", 1, 2)
+		TNT1 A 0 A_PlaySound("yesenia/ultraget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("UltraBeamGet", 1)
+		TNT1 A 0 A_GiveInventory("UltraBeam", 1)
+		Stop
+	}
+}

@@ -1,0 +1,185 @@
+ACTOR KickEffect
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.5
+	Decal "YFOOTPRT"
+	AttackSound "yesenia/kickhit"
+	States
+	{
+		Spawn:
+		YKFL A 2 BRIGHT
+		
+		Crash:
+		YKFL BCD 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR ScarfPunchEffect
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.5
+	Scale 2
+	Decal "YPNCHPRT"
+	AttackSound "yesenia/kickhit"
+	States
+	{
+		Spawn:
+		YKFL A 2 BRIGHT
+		
+		Crash:
+		YKFL BCD 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR IceSlugPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.5
+	Decal "SLSHICE"
+	AttackSound "slugshrd/impact"
+	States
+	{
+		Spawn:
+		SHPF A 2 BRIGHT
+		
+		Crash:
+		SHPF BCD 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR BusterPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.9
+	Decal "BSTPLAS"
+	AttackSound "BSTR_HIT"
+	States
+	{
+		Spawn:
+		BSTB B 2 BRIGHT
+		
+		Attack:
+		BSTB CD 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR SharpsawPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.7
+	VSpeed 1
+	Decal "SHSAWCUTH"
+	AttackSound "sharpsaw/cut"
+	States
+	{
+		Spawn:
+		SHWP A 3 BRIGHT
+		
+		Crash:
+		SHWP BC 3
+		Stop
+	}
+}
+
+ACTOR SharpSwingPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.7
+	VSpeed 1
+	Scale 2
+	Decal "SHSAWSLSH"
+	AttackSound "sharpsaw/cut"
+	States
+	{
+		Spawn:
+		SHPH A 3 BRIGHT
+		
+		Crash:
+		SHPH BC 3
+		Stop
+	}
+}
+
+ACTOR WaterBuckPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+RANDOMIZE
+	RenderStyle Translucent
+	Alpha 0.3
+	Decal "QBUKHOLE"
+	AttackSound "quadbuck/impact"
+	States
+	{
+		Spawn:
+		QBSP A 2 
+		
+		Crash:
+		QBSP BCD 2 
+		Stop
+	}
+}
+
+ACTOR SiegeTurretPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALWAYSPUFF
+	+FORCEDECAL
+	vspeed -2
+	RenderStyle Add
+	AttackSound "siegetur/hit"
+	Decal "SIEGHOT"
+	States
+	{
+		Spawn:
+		SGPF A 2 BRIGHT
+		Attack:
+		SGPF BCD 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR FerraBusterPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALWAYSPUFF
+	+FORCEDECAL
+	RenderStyle Add
+	AttackSound "ferra/impact"
+	Decal "FERRPLAS"
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enableweapondynamiclighting") == 0, 2)
+		TNT1 A 0 A_AttachLight("ferrapuff", 1, "CCFFFF", 60, 90, 0)
+		FEPF A 2 BRIGHT
+		Attack:
+		FEPF BCD 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ferrapuff")
+		Stop
+	}
+}

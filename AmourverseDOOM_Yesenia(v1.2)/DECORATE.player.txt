@@ -1,0 +1,237 @@
+ACTOR ScarfEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR GhouliesEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR SharpsawGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR SharpsawEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR QuadbuckGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR QuadbuckEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR SluggershardGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR SluggershardEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR SiegeGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR SiegeEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR ClamGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR ClamEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR FerraGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR FerraEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR UltraBeamGet : Inventory
+{
+	-INVBAR
+	+PERSISTENTPOWER
+	+UNDROPPABLE
+	Inventory.MaxAmount 1
+}
+
+ACTOR UltraBeamEquipped : Inventory
+{
+	-INVBAR
+	+HUBPOWER
+	+UNTOSSABLE
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+}
+
+ACTOR YeseniaPlayer : ClimbingPlayer
+{
+	PainChance 255
+	Scale 0.8
+	Speed 1
+	Player.DisplayName "Yesenia"
+	Player.Face "YES"
+	Player.JumpZ 12.0
+	Player.SoundClass "yeseniavoice"
+	Player.CrouchSprite "YCRO"
+
+	Player.StartItem "TwinGhoulies"
+	Player.StartItem "ScarfFists"
+	Player.StartItem "GhostClip" 62
+	Player.StartItem "WaterShells" 12
+	Player.StartItem "SlugsLoaded" 1
+	Player.Startitem "ExplosiveClams", 2
+	Player.StartItem "PlasmaCells", 20
+
+	Player.WeaponSlot 1, ScarfFists, Sharpsaw
+	Player.WeaponSlot 2, TwinGhoulies
+	Player.WeaponSlot 3, Quadbuck, Sluggershard
+	Player.WeaponSlot 4, SiegeTurret
+	Player.WeaponSlot 5, ClamLauncher
+	Player.WeaponSlot 6, FerraBuster
+	Player.WeaponSlot 7, UltraBeam
+	
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_JumpIfInventory("IsStomping", 1, "YessStomp")
+		TNT1 A 0 A_JumpIfInventory("IsSliding", 1, "YessSlide")
+		TNT1 A 0 A_JumpIfInventory("IsKicking", 1, "YessKick")
+		TNT1 A 0 A_JumpIf(velz != 0, "YessFall")
+		YIDL A 12
+		TNT1 A 0 A_JumpIfInventory("IsStomping", 1, "YessStomp")
+		TNT1 A 0 A_JumpIfInventory("IsSliding", 1, "YessSlide")
+		TNT1 A 0 A_JumpIfInventory("IsKicking", 1, "YessKick")
+		TNT1 A 0 A_JumpIf(velz != 0, "YessFall")
+		YIDL B 12
+		Loop
+		See:
+		TNT1 A 0 A_JumpIfInventory("IsStomping", 1, "YessStomp")
+		TNT1 A 0 A_JumpIfInventory("IsSliding", 1, "YessSlide")
+		TNT1 A 0 A_JumpIfInventory("IsKicking", 1, "YessKick")
+		TNT1 A 0 A_JumpIf(velz != 0, "YessFall")
+		YRUN AB 4
+		TNT1 A 0 A_JumpIfInventory("IsStomping", 1, "YessStomp")
+		TNT1 A 0 A_JumpIfInventory("IsSliding", 1, "YessSlide")
+		TNT1 A 0 A_JumpIfInventory("IsKicking", 1, "YessKick")
+		TNT1 A 0 A_JumpIf(velz != 0, "YessFall")
+		YRUN CD 4
+		Loop
+		YessFall:
+		YFAL AB 4
+		Goto Spawn
+		YessSlide:
+		YSLY A 1
+		Goto Spawn
+		YessKick:
+		YKIK A 3
+		YKIK B 6
+		YKIK A 3
+		Goto Spawn
+		YessStomp:
+		YGPN A 1
+		Goto Spawn
+		Missile:
+		YFIR B 12
+		Goto Spawn
+		Melee:
+		YFIR A 6 BRIGHT
+		Goto Missile
+		Goto Spawn
+		Pain:
+		YHUT A 4 
+		YHUT A 4 A_Pain
+		Goto Spawn
+		Death:
+		TNT1 A 0 A_PlayerScream
+		YDED ABCD 4
+		YDED E 16
+		YDED FG 8 A_NoBlocking
+		YDED G -1
+		Stop
+		XDeath:
+		TNT1 A 0 A_PlayerScream
+		YDED ABCD 4
+		YDED E 8
+		YDED FG 4 A_NoBlocking
+		YDED G -1
+		Stop
+	}
+}

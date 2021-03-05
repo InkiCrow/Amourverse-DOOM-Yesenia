@@ -1,0 +1,106 @@
+ACTOR BluePCard : CustomInventory Replaces BlueCard
+{
+	Inventory.PickupMessage "You got the blue keycard!"
+	
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("bcardglow", 1, "0000FF", 30, 70, 0)
+		BKEY ABCD 2 BRIGHT
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("BlueCard",1)
+		TNT1 A 0 A_PlaySound("pickup/key", CHAN_BODY, 1)
+		Stop
+	}
+}
+
+ACTOR RedPCard : CustomInventory Replaces RedCard
+{
+	Inventory.PickupMessage "You got the red keycard!"
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("rcardglow", 1, "FF0000", 30, 50, 0)
+		RKEY ABCD 2 BRIGHT
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("RedCard",1)
+		TNT1 A 0 A_PlaySound("pickup/key", CHAN_BODY, 1)
+		Stop
+	}
+}
+
+ACTOR YellowPCard : CustomInventory Replaces YellowCard
+{
+	Inventory.PickupMessage "You got the yellow keycard!"
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ycardglow", 1, "FFFF00", 30, 50, 0)
+		YKEY ABCD 2 BRIGHT
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("YellowCard",1)
+		TNT1 A 0 A_PlaySound("pickup/key", CHAN_BODY, 1)
+		Stop
+	}
+}
+
+ACTOR BluePSkull : CustomInventory Replaces BlueSkull
+{
+	Inventory.PickupMessage "You got the blue skull key!"
+	
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("bskullglow", 1, "0000FF", 30, 50, 0)
+		BSKL A 9 BRIGHT
+		BSKL BCD 3 BRIGHT
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("BlueSkull",1)
+		TNT1 A 0 A_PlaySound("pickup/skullkey", CHAN_BODY, 1)
+		Stop
+	}
+}
+
+ACTOR RedPSkull : CustomInventory Replaces RedSkull
+{
+	Inventory.PickupMessage "You got the red skull key!"
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("rskullglow", 1, "FF0000", 30, 50, 0)
+		RSKL A 9 BRIGHT
+		RSKL BCD 3 BRIGHT
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("RedSkull",1)
+		TNT1 A 0 A_PlaySound("pickup/skullkey", CHAN_BODY, 1)
+		Stop
+	}
+}
+
+ACTOR YellowPSkull : CustomInventory Replaces YellowSkull
+{
+	Inventory.PickupMessage "You got the yellow skull key!"
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("yskullglow", 1, "FFFF00", 30, 50, 0)
+		YSKL A 9 BRIGHT
+		YSKL BCD 3 BRIGHT
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("YellowSkull",1)
+		TNT1 A 0 A_PlaySound("pickup/skullkey", CHAN_BODY, 1)
+		Stop
+	}
+}

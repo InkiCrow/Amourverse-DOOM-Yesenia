@@ -1,0 +1,131 @@
+ACTOR Potion : Health Replaces Stimpack
+{
+	Inventory.Amount 15
+	Inventory.PickupMessage "You picked up a Potion."
+	Inventory.PickupSound "pickup/potion"
+	States
+	{
+		Spawn:
+		POTN ABC 3
+		Loop
+	}
+}
+
+ACTOR PotionKit : Health Replaces Medikit
+{
+	Inventory.Amount 50
+	Inventory.PickupMessage "You picked up a Potion Kit!"
+	Health.LowMessage 25, "Picked up a Potion kit just in time!"
+	Inventory.PickupSound "pickup/ptionkit"
+	States
+	{
+		Spawn:
+		PTKT A 1 A_CheckProximity("OpenKit", "YeseniaPlayer", 100)
+		Loop
+		
+		OpenKit:
+		PTKT BCD 3
+		Goto KitOpen
+		
+		KitOpen:
+		PTKT E 1
+		Loop
+	}
+}
+
+ACTOR SweetPuff : Health
+{
+	Inventory.Amount 2
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "You picked up a Sweet Puff."
+	Inventory.PickupSound "pickup/pokepuff"
+	States
+	{
+		Spawn:
+		PUFS A 1
+		Loop
+	}
+}
+
+ACTOR MintPuff : Health
+{
+	Inventory.Amount 2
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "You picked up a Mint Puff."
+	Inventory.PickupSound "pickup/pokepuff"
+	States
+	{
+		Spawn:
+		PUFM A 1
+		Loop
+	}
+}
+
+ACTOR CitrusPuff : Health
+{
+	Inventory.Amount 2
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "You picked up a Citrus Puff."
+	Inventory.PickupSound "pickup/pokepuff"
+	States
+	{
+		Spawn:
+		PUFC A 1
+		Loop
+	}
+}
+
+ACTOR MochaPuff : Health
+{
+	Inventory.Amount 2
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "You picked up a Mocha Puff."
+	Inventory.PickupSound "pickup/pokepuff"
+	States
+	{
+		Spawn:
+		PUFF A 1
+		Loop
+	}
+}
+
+ACTOR FudgePuff : Health
+{
+	Inventory.Amount 2
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "You picked up a Double Fudge Puff."
+	Inventory.PickupSound "pickup/pokepuff"
+	States
+	{
+		Spawn:
+		PUFP A 1
+		Loop
+	}
+}
+
+ACTOR PuffSpawner : Health Replaces HealthBonus
+{
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SpawnItemEx("SweetPuff", 0)
+		Stop
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SpawnItemEx("MintPuff", 0)
+		Stop
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SpawnItemEx("CitrusPuff", 0)
+		Stop
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SpawnItemEx("MochaPuff", 0)
+		Stop
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("FudgePuff", 0)
+		Stop
+	}
+}

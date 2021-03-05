@@ -1,0 +1,101 @@
+class ClimbingPlayer : DoomPlayer
+{
+    const climbReach = 9;
+    const thrustSpeed = 6;
+
+    bool climbing;
+
+    int maxLedgeHeight;
+    int climbSpeed;
+
+    property MaxLedgeHeight: maxLedgeHeight;
+    property ClimbSpeed: climbSpeed;
+
+    Default
+    {
+        ClimbingPlayer.MaxLedgeHeight 48;
+        ClimbingPlayer.ClimbSpeed 2;
+    }
+
+
+    override void CheckJump()
+    {
+        let player = self.player;
+		
+        double ledgeHeight;
+        {
+            vector3 oldPos = pos;
+
+            SetXyz(pos + (0, 0, maxLedgeHeight));   // Account for thin 3D floors
+            ledgeHeight = GetZAt(radius + climbReach, 0) - oldPos.z;
+            SetXyz(oldPos);
+        }
+
+        bool jump = player.cmd.buttons & BT_JUMP;
+        double clearance = GetZAt(radius + climbReach, 0, 0, GZF_CEILING) - GetZAt(radius + climbReach, 0);
+
+        // Start/stop climbing
+        if (!climbing)
+        {
+            if (jump && ledgeHeight > maxStepHeight && ledgeHeight <= maxLedgeHeight)
+            {
+                climbing = true;
+                A_StartSound("*Climb", CHAN_BODY);
+                A_GiveInventory("IsClimbing", 1);
+                viewBob = 0.0;
+            }
+        }
+        else
+        {
+            if (!jump || ledgeHeight > maxLedgeHeight)  // Drop down/get knocked down from ledge
+            {
+                climbing = false;
+            }
+            else if (ledgeHeight <= maxStepHeight && clearance >= 0.5 * height)    // Reach top of ledge
+            {
+                climbing = false;
+
+                // Crouch, so player can fit into small spaces
+                player.crouchFactor = 0.5;
+                SetOrigin(pos + (0, 0, 0.5 * fullHeight), false);   // Keep view from jerking
+                player.viewHeight *= 0.5;
+
+                VelFromAngle(thrustSpeed, angle);  // Thrust player onto ledge
+            }
+
+            if (!climbing)  // Exit climbing state
+            {
+                viewBob = 1.0;
+                player.SetPsprite(PSP_WEAPON, player.readyWeapon.GetUpState());
+                player.jumpTics = -1;
+            }
+        }
+
+        if (climbing)
+        {
+
+            let psp = player.GetPsprite(PSP_WEAPON);
+            if (psp.y == WEAPONTOP) // Keep weapon down
+            {
+                psp.y = WEAPONTOP;
+            }
+            else    // Lower weapon twice as fast
+            {
+                psp.y = WEAPONBOTTOM;
+            }
+
+            if (ledgeHeight <= maxStepHeight) // Hold onto ledge at top, if player can't get on it
+            {
+                vel = (0, 0, 0);
+            }
+            else    // Climb ledge
+            {
+                vel = (0, 0, climbSpeed);
+            }
+        }
+
+        Super.CheckJump();
+    }
+	
+}
+

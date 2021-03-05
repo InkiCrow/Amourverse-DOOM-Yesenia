@@ -1,0 +1,2 @@
+STARTUPTITLE = "Amourverse DOOM: Yesenia"
+STARTUPCOLORS = "000000", "FBEB33"

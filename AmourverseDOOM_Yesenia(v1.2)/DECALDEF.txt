@@ -1,0 +1,321 @@
+//This decal is for the kick move
+decal YFOOTPRT
+{
+	pic YKICKPRT
+	translucent 0.5
+	x-scale 0.6
+	y-scale 0.6
+}
+
+Decal YPNCHPRT
+{
+	pic YPCHPRT
+	translucent 0.7
+	x-scale 0.9
+	y-scale 0.9
+}
+//These decals and animator is for the Ghoulies
+Fader BusterFade
+{
+	DecayStart 1.5
+	DecayTime 2
+}
+
+decal BSTHOLE
+{
+	pic BSTRHLE
+	translucent 0.7
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+}
+
+decal GHLPLAS
+{
+	pic GHOUPLS
+	translucent 0.5
+	fullbright
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+	animator BusterFade
+	lowerdecal BSTHOLE
+}
+
+decal BSTHOLL
+{
+	pic BSTRHLE
+	translucent 0.7
+	x-scale 1.2
+	y-scale 1.2
+	randomflipx
+	randomflipy
+}
+
+decal GHLPLAL
+{
+	pic GHOUPLS
+	translucent 0.5
+	fullbright
+	x-scale 1.2
+	y-scale 1.2
+	randomflipx
+	randomflipy
+	animator BusterFade
+	lowerdecal BSTHOLL
+}
+//The next few decals are for teh Shardsaw
+fader SharpFade
+{
+	DecayStart 0.5
+	DecayTime 1
+}
+
+Decal SHSAWCUT
+{
+	pic SHAWCUT
+	translucent 0.7
+	x-scale 0.3
+	y-scale 0.3
+	randomflipx
+}
+
+Decal SHSAWCUTH
+{
+	pic SHAWHOT
+	translucent 0.9
+	fullbright
+	x-scale 0.3
+	y-scale 0.3
+	animator SharpFade
+	lowerdecal SHSAWCUT
+}
+
+Decal SHSAWSLS
+{
+	pic SHAWCUTH
+	translucent 0.7
+	x-scale 0.7
+	y-scale 0.5
+}
+
+Decal SHSAWSLSH
+{
+	pic SHAWHOTH
+	translucent 0.9
+	fullbright
+	x-scale 0.7
+	y-scale 0.5
+	animator SharpFade
+	lowerdecal SHSAWSLS
+}
+//The next few decals will be given to the Shattershard
+Fader IceFade
+{
+	DecayStart 3
+	DecayTime 3
+}
+
+Stretcher MeltFade
+{
+	GoalX 0.1
+	GoalY 10
+	StretchStart 1.5
+	StretchTime 10 
+}
+
+decal SLSHDRP
+{
+	pic SLSDRP
+	translucent 0.3
+	animator MeltFade
+	y-scale 0.1
+	x-scale 0.1
+	randomflipx
+}
+
+decal ShardHoleA
+{
+	pic SLSHLE1
+	translucent 0.7
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+	lowerdecal SLSHDRP
+}
+
+decal ShardHoleB
+{
+	pic SLSHLE2
+	translucent 0.7
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+	lowerdecal SLSHDRP
+}
+
+decalgroup SLSHOLE
+{
+	ShardHoleA 1
+	ShardHoleB 1
+}
+
+decal SLSHICE
+{
+	pic SLSICE
+	add 1.0
+	animator IceFade
+	x-scale 0.15
+	y-scale 0.15
+	lowerdecal SLSHOLE
+}
+//The next few decals are for the QuadBuck
+Stretcher BuckStretch
+{
+	GoalX 0.4
+	GoalY 0.4
+	StretchStart 0.1
+	StretchTime 0.3
+}
+
+Fader BuckDry
+{
+	DecayStart 5
+	DecayTime 3
+}
+
+Decal QBUKSPSH
+{
+	pic QBSPSH
+	translucent 0.2
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+	animator BuckDry
+}
+
+Decal QBUKHOLE
+{
+	pic QBHOLE
+	translucent 0.7
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	lowerdecal QBUKSPSH
+}
+//These are for the Siege Turret
+Fader SiegFade
+{
+	DecayStart 1
+	DecayTime 2
+}
+Decal SIEGHOLE
+{
+	pic SIEGHOLE
+	translucent 0.7
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+}
+Decal SIEGHOT
+{
+	pic SIEGBULL
+	translucent 0.5
+	fullbright
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+	animator SiegFade
+	lowerdecal SIEGHOLE
+}
+
+//Here goes the decals for the FERRA Buster
+Fader FeraFade
+{
+	DecayStart 2
+	DecayTime 1
+}
+
+Decal FERRSCOR
+{
+	pic FERSCRCH
+	translucent 0.7
+	x-scale 0.7
+	y-scale 0.7
+	randomflipx
+	randomflipy
+}
+
+Decal FERRPLAS
+{
+	pic FERPLAS
+	translucent 0.7
+	fullbright
+	x-scale 0.7
+	y-scale 0.7
+	randomflipx
+	randomflipy
+	animator FeraFade
+	lowerdecal FERRSCOR
+}
+
+Decal FERRSCOL
+{
+	pic FERSCRCH
+	translucent 0.95
+	x-scale 1.2
+	y-scale 1.2
+	randomflipx
+	randomflipy
+}
+
+Decal FERRPLAL
+{
+	pic FERPLAS
+	translucent 1
+	fullbright
+	x-scale 1.1
+	y-scale 1.1
+	randomflipx
+	randomflipy
+	animator FeraFade
+	lowerdecal FERRSCOL
+}
+
+//And here goes the decals for the Ultra Beam
+
+Fader UltrFade
+{
+	DecayStart 5
+	DecayTime 6
+}
+
+Decal ULTRSCOR
+{
+	pic ULTRBURN
+	translucent 0.95
+	x-scale 1
+	y-scale 1
+	randomflipx
+	randomflipy
+}
+
+Decal ULTRFIRE
+{
+	pic ULTRPLAS
+	translucent 0.9
+	fullbright
+	x-scale 1
+	y-scale 1
+	randomflipx
+	randomflipy
+	animator UltrFade
+	lowerdecal ULTRSCOR
+}

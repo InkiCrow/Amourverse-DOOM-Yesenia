@@ -1,0 +1,186 @@
+ACTOR FerraBusterCharged : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
+ACTOR FerraBusterTrail
+{
+	Scale 1
+	RenderStyle Add
+	+NOGRAVITY
+	+NOBLOCKMAP
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ferrashot", 1, "CCFFFF", 20, 50, 0)
+		FELS A 2 BRIGHT
+		Death:
+		FELS BCD 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ferrashot")
+		Stop
+	}
+}
+
+ACTOR FerraBusterChargedTrail
+{
+	Scale 2
+	RenderStyle Add
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+ALWAYSPUFF
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ferrashot", 1, "CCFFFF", 50, 120, 0)
+		FELS A 2 BRIGHT
+		Death:
+		FELS BCD 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ferrashot")
+		Stop
+	}
+}
+
+ACTOR FerraBusterChargeShot
+{
+	Scale 1
+	RenderStyle Add
+	Decal "FERRPLAL"
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+ALWAYSPUFF
+	+FORCEDECAL
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("ferrashot", 1, "CCFFFF", 70, 150, 0)
+		FEEX AB 2 BRIGHT
+		Death:
+		FEEX C 2 BRIGHT{
+			A_Explode(100, 50);
+			A_PlaySound("ferra/chargeex", CHAN_AUTO, 1);
+		}
+		FEEX DEF 2 BRIGHT
+		TNT1 A 0 A_RemoveLight("ferrashot")
+		Stop
+	}
+}
+
+ACTOR FerraBuster : YeseniaArms
+{
+	Weapon.SelectionOrder 8
+	Weapon.AmmoType "PlasmaCells"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 40
+	Weapon.BobSpeed 2.0
+	Weapon.BobRangeX 0.5
+	Weapon.BobRangeY 0.3
+	AttackSound "ferra/fire"
+	Inventory.Icon "YFERA0"
+	Inventory.PickupMessage "Picked up the FERRA Buster Prototype!"
+	+NOAUTOFIRE
+	+NOAUTOAIM
+	States
+	{
+		Spawn:
+		YFER A 1
+		Loop
+		
+		Select:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablelegs") == 0, 2)
+		TNT1 A 0 A_Overlay(-10, "FirstPersonLegsStand")
+		TNT1 A 0 A_PlaySound("ferra/select", CHAN_WEAPON, 0.5)
+		TNT1 A 0 A_Raise(255)
+		Wait
+		
+		DrawGun:
+		FEBT ABCD 2
+		TNT1 A 0 A_GiveInventory("FerraEquipped", 1)
+		Goto Ready
+		
+		HolsterGun:
+		FEBT DCBA 2
+		TNT1 A 0 A_TakeInventory("FerraEquipped", 1)
+		Goto Deselect
+		
+		Deselect:
+		TNT1 A 0 A_RemoveLight("ferraflash")
+		TNT1 A 0 A_JumpIfInventory("FerraEquipped", 1, "HolsterGun")
+		TNT1 A 0 A_Lower(255)
+		Wait
+		
+		Reselect:
+		FEBT ABCD 2
+		Goto Ready
+		
+		Ready:
+		TNT1 A 0 A_JumpIfInventory("IsClimbing", 1, "LedgeGrab")
+		TNT1 A 0 A_JumpIfInventory("FerraEquipped", 0, 1)
+		Goto DrawGun
+		FEBT E 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3)
+		Loop
+		
+		Fire:
+		FEBT F 2 BRIGHT A_TakeInventory("IsClimbing", 1)
+		Goto Hold
+		
+		Hold:
+		TNT1 A 0 A_AttachLight("ferraflash", 1, "CCFFFF", 60, 90, 0)
+		FEBT G 2 BRIGHT A_RailAttack(50, 0, TRUE, "cyan", "white", RGF_NOPIERCING|RGF_FULLBRIGHT, 0, "FerraBusterPuff", 0, 0, 0, 20, 0.1, 0, "FerraBusterTrail", -5, 100, 0)
+		FEBT HIJ 2
+		FEBT E 2 A_Refire
+		TNT1 A 0 A_RemoveLight("ferraflash")
+		Goto Ready
+		
+		AltFire:
+		TNT1 A 0 A_JumpIfInventory("PlasmaCells", 5, "StartCharge")
+		Goto Ready
+		
+		StartCharge:
+		TNT1 A 0 A_AttachLight("ferraflash", 1, "CCFFFF", 60, 90, 0)
+		TNT1 A 0 A_PlaySound("ferra/chargeup", CHAN_WEAPON, 1)
+		FEBT KLM 2
+		TNT1 A 0 A_PlaySound("ferra/chargelp", CHAN_BODY, 0.7, TRUE)
+		FEBT NONOPQPQRSRS 2
+		Goto AltHold
+		
+		AltHold:
+		TNT1 A 0 A_AttachLight("ferraflash", 1, "CCFFFF", 70, 110, 0)
+		FEBT RS 1
+		TNT1 A 0 A_GiveInventory("FerraBusterCharged", 1)
+		TNT1 A 0 A_Refire
+		TNT1 A 0 A_JumpIfInventory("FerraBusterCharged", 1, "ChargeShot")
+		TNT1 A 0 A_PlaySound("ferra/chargedn", CHAN_BODY, 0.7)
+		FEBT YZLKE 2
+		TNT1 A 0 A_RemoveLight("ferraflash")
+		Goto Ready
+		
+		ChargeShot:
+		TNT1 A 0 A_AttachLight("ferraflash", 1, "CCFFFF", 80, 150, 0)
+		FEBT T 2 BRIGHT {
+			A_RailAttack(150, 0, FALSE, "cyan", "white", RGF_NOPIERCING|RGF_FULLBRIGHT, 0, "FerraBusterChargeShot", 0, 0, 0, 20, 0.1, 0, "FerraBusterChargedTrail", -5, 100, 0);
+			A_PlaySound("ferra/chargefr", CHAN_WEAPON, 1);
+		}
+		TNT1 A 0 A_JumpIfInventory("PowerInfiniteAmmo", 1, 2)
+		TNT1 A 0 A_TakeInventory("PlasmaCells", 5)
+		FEBT UVW 2
+		TNT1 A 0 A_RemoveLight("ferraflash")
+		TNT1 A 0 A_PlaySound("ferra/cooldown", CHAN_BODY, 0.5)
+		FEBT XYZLKE 2
+		Goto Ready
+		
+		User1:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Kick")
+		Goto Ready
+		
+		User2:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Slide")
+		Goto Ready
+		
+		User3:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "GroundSlam")
+		Goto Ready
+	}
+}

@@ -1,0 +1,9 @@
+addkeysection "Yesenia's Actions" Yeseniakeys
+
+addmenukey "Kick" +user1
+addmenukey "Slide" +user2
+addmenukey "Ground Slam" +user3
+
+defaultbind Q +user1
+defaultbind C +user2
+defaultbind G +user3

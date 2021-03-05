@@ -1,0 +1,275 @@
+//Over here the sounds and voices for the player are found.
+$RANDOM yesenia/usefail { YS_FAIL1 YS_FAIL2 YS_FAIL3 }
+YS_FAIL1 YS_FAIL1
+YS_FAIL2 YS_FAIL2
+YS_FAIL3 YS_FAIL3
+$playeralias yeseniavoice male *usefail yesenia/usefail
+
+$RANDOM yesenia/hurt { hurt1 hurt2 hurt3 hurt4 hurt5 }
+hurt1 YS_HRT1
+hurt2 YS_HRT2
+hurt3 YS_HRT3
+hurt4 YS_HRT4
+hurt5 YS_HRT5
+$playeralias yeseniavoice male *pain100 yesenia/hurt
+$playeralias yeseniavoice male *pain75 *pain100
+$playeralias yeseniavoice male *pain50 *pain100
+
+$RANDOM yesenia/critical {crit1 crit2 crit3 }
+crit1 YS_CRT1
+crit2 YS_CRT2
+crit3 YS_CRT3
+$playeralias yeseniavoice male *pain25 yesenia/critical
+
+$RANDOM yesenia/death { death1 death2 death3 }
+death1 YS_DEAD1
+death2 YS_DEAD2
+death3 YS_DEAD3
+$playeralias yeseniavoice male *death yesenia/death
+$playeralias yeseniavoice male *xdeath yesenia/death
+
+$RANDOM yesenia/jump { jump1 jump2 jump3 }
+jump1 YS_JMP1
+jump2 YS_JMP2
+jump3 YS_JMP3
+$playeralias yeseniavoice male *jump yesenia/jump
+
+$playersound yeseniavoice male *land YS_LAND
+
+$playersound yeseniavoice male *grunt YS_LND2
+
+$RANDOM yesenia/sawget { sawget1 sawget2 sawget3 }
+sawget1 YS_SAW1
+sawget2 YS_SAW2
+sawget3 YS_SAW3
+
+$RANDOM yesenia/quadget { quadget1 quadget2 quadget3 }
+quadget1 YS_QBGT1
+quadget2 YS_QBGT2
+quadget3 YS_QBGT3
+
+$RANDOM yesenia/slugrget { slgrget1 slgrget2 slgrget3 }
+slgrget1 YS_SLS1
+slgrget2 YS_SLS2
+slgrget3 YS_SLS3
+
+$RANDOM yesenia/siegeget { sieget1 sieget2 sieget3 }
+sieget1 YS_SGT1
+sieget2 YS_SGT2
+sieget3 YS_SGT3
+
+$RANDOM yesenia/clamget { clamget1 clamget2 clamget3 }
+clamget1 YS_CLA1
+clamget2 YS_CLA2
+clamget3 YS_CLA3
+
+$RANDOM yesenia/ferraget { ferget1 ferget2 ferget3 }
+ferget1 YS_FER1
+ferget2 YS_FER2
+ferget3 YS_FER3
+
+$RANDOM yesenia/ultraget { pdcget1 pdcget2 pdcget3 pdcget4 pdcget5 }
+pdcget1 YS_BFG1
+pdcget2 YS_BFG2
+pdcget3 YS_BFG3
+pdcget4 YS_BFG4
+pdcget5 YS_BFG5
+
+$RANDOM yesenia/berserk { berkget1 berkget2 berkget3 }
+berkget1 YS_BRK1
+berkget2 YS_BRK2
+berkget3 YS_BRK3
+
+$RANDOM yesenia/mmkzget { mmkzget1 mmkzget2 mmkzget3 }
+mmkzget1 YS_MMZ1
+mmkzget2 YS_MMZ2
+mmkzget3 YS_MMZ3
+
+$RANDOM yesenia/candyget { cndyget1 cndyget2 cndyget3 }
+cndyget1 YS_RCD1
+cndyget2 YS_RCD2
+cndyget3 YS_RCD3
+
+$RANDOM yesenia/thrmlget { thrget1 thrget2 thrget3 }
+thrget1 YS_THR1
+thrget2 YS_THR2
+thrget3 YS_THR3
+
+$RANDOM yesenia/bootsget { bootget1 bootget2 bootget3 }
+bootget1 YS_BTS1
+bootget2 YS_BTS2
+bootget3 YS_BTS3
+
+$RANDOM yesenia/inkget { inkget1 inkget2 inkget3 }
+inkget1 YS_INK1
+inkget2 YS_INK2
+inkget3 YS_INK3
+
+$RANDOM yesenia/cloakget { clkget1 clkget2 }
+clkget1 YS_CLK1
+clkget2 YS_CLK2
+
+$RANDOM yesenia/mapget { mapget1 mapget2 mapget3 }
+mapget1 YS_MAP1
+mapget2 YS_MAP2
+mapget3 YS_MAP3
+
+$RANDOM yesenia/punch { ora1 ora2 ora3 }
+ora1 YS_ORA1
+ora2 YS_ORA2
+ora3 YS_ORA3
+
+$RANDOM yesenia/slamvo { slamvo1 slamvo2 slamvo3 }
+slamvo1 YS_STM1
+slamvo2 YS_STM2
+slamvo3 YS_STM3
+
+$RANDOM yesenia/hevshout { hshout1 hshout2 hshout3 }
+hshout1 YS_HATK1
+hshout2 YS_HATK2
+hshout3 YS_HATK3
+
+$RANDOM yesenia/shout { shout1 shout2 shout3 shout4 }
+shout1 YS_KICK1
+shout2 YS_KICK2
+shout3 YS_KICK3
+shout4 YS_KICK4
+
+//This is for the weapons
+
+$RANDOM yesenia/scarfpnch { SCFIS1 SCFIS2 SCFIS3 }
+SCFIS1 SCFIS1
+SCFIS2 SCFIS2
+SCFIS3 SCFIS3
+
+yesenia/barrage SF_BARR
+
+//Kick and slide sounds
+yesenia/kick KICK_SND
+yesenia/kickhit KHIT_SND
+yesenia/slide YSLIDE
+yesenia/climb CLMB_SND
+yesenia/slamdown GSLAM_SL
+yesenia/slamland GSLM_LND
+yesenia/slamhard GSLM_HRD
+//Footstep sounds
+$RANDOM yesenia/footstep { FOOTSTP1 FOOTSTP2 FOOTSTP3 FOOTSTP4 FOOTSTP5 }
+FOOTSTP1 FOOTSTP1
+FOOTSTP2 FOOTSTP2
+FOOTSTP3 FOOTSTP3
+FOOTSTP4 FOOTSTP4
+FOOTSTP5 FOOTSTP5
+//Ghoulies sounds
+buster/shot BSTR_SHT
+BSTR_HIT BSTR_HIT
+buster/spin BSTR_SPN
+buster/grab BSTR_GRB
+buster/bigshot BSTR_BIG
+//Sharpsaw sounds
+sharpsaw/pullzip DSSAWZIP
+sharpsaw/swing DSSAWSNG
+sharpsaw/attack DSSAWFUL
+sharpsaw/hit DSSAWHIT
+sharpsaw/select DSSAWUP
+sharpsaw/deselect DSSAWDIE
+sharpsaw/idle DSSAWIDL
+$RANDOM sharpsaw/cut { DSSAWAL1 DSSAWAL2 DSSAWAL3 DSSAWAL4 DSSAWAL5 }
+DSSAWAL1 DSSAWAL1
+DSSAWAL2 DSSAWAL2
+DSSAWAL3 DSSAWAL3
+DSSAWAL4 DSSAWAL4
+DSSAWAL5 DSSAWAL5
+//Sluggershard sounds
+slugshrd/select SLSHSLCT
+slugshrd/cock SLSHCOCK
+slugshrd/shot SLSHSHOT
+slugshrd/impact SLSHIPCT
+slugshrd/release SLSHRLSE
+slugshrd/cockin SLSHCCK1
+slugshrd/cockout SLSHCCK2
+$RANDOM slugshrd/shell { SLSHSHL1 SLSHSHL2 SLSHSHL3 }
+SLSHSHL1 SLSHSHL1
+SLSHSHL2 SLSHSHL2
+SLSHSHL3 SLSHSHL3
+//Quadbuck sounds
+quadbuck/shot QBCKSHOT
+quadbuck/suprshot QBCKSSHT
+quadbuck/spin QBCKTURN
+quadbuck/open QBCKOPEN
+quadbuck/close QBCKCLSE
+quadbuck/in QBCKIN
+quadbuck/impact QBCKIPCT
+$RANDOM quadbuck/casing { QBCKCAS1 QBCKCAS3 QBCKCAS3 }
+QBCKCAS1 QBCKCAS1
+QBCKCAS2 QBCKCAS2
+QBCKCAS3 QBCKCAS3
+//Here goes the sounds for the Siege Turret
+siegetur/windup STWNDUP
+siegetur/winddown STWNDDWN
+siegetur/loop STFRLOOP
+siegetur/select STSLCT
+siegetur/siege STSGMODE
+siegetur/retract STRTRCT
+$RANDOM siegetur/fire { STFIRE1 STFIRE2 STFIRE3 STFIRE4 }
+STFIRE1 STFIRE1
+STFIRE2 STFIRE2
+STFIRE3 STFIRE3
+STFIRE4 STFIRE4
+$RANDOM siegetur/hit { ST_HIT1 ST_HIT2 ST_HIT3 }
+ST_HIT1 ST_HIT1
+ST_HIT2 ST_HIT2
+ST_HIT3 ST_HIT3
+//Here goes the sounds for the Clam Launcher.
+clamlaun/reload CLAM_RLD
+clamlaun/explode CLAM_EXP
+clamlaun/shot CLAM_SHT
+clamlaun/select CLAM_ENT
+//here goes the sounds for the FERRA Buster
+$RANDOM ferra/fire { fer1 fer2 fer3 }
+fer1 FB_FIRE1
+fer2 FB_FIRE2
+fer3 FB_FIRE3
+ferra/cooldown FB_CDOWN
+ferra/chargeup FB_CHRUP
+ferra/chargelp FB_CHLOP
+ferra/chargeex FB_CHREX
+ferra/select FB_SLCT
+ferra/chargefr FB_CFIRE
+ferra/chargedn FB_CHRDN
+$RANDOM ferra/impact { ferimp1 ferimp2 ferimp3 }
+ferimp1 FB_IPT1
+ferimp2 FB_IPT2
+ferimp3 FB_IPT3
+//Here goes the Ultra Beam sounds.
+ultrbeam/select UB_SLCT
+ultrbeam/windup UB_WUP
+ultrbeam/winddown UB_WDWN
+ultrbeam/fire UB_PFIRE
+ultrbeam/explode UB_PEXP
+ultrbeam/chbegin UB_SBEGN
+ultrbeam/chfire UB_SFIRE
+ultrbeam/chloop UB_SLOOP
+ultrbeam/chend UB_SEND
+//Here are the sounds for the pickups.
+pickup/clip CLIPUP
+pickup/mag MAGUP
+pickup/box BOXUP
+pickup/gun GOTGUN
+pickup/key GOTKEY
+pickup/potion GOTHEAL
+pickup/ptionkit GOTHEALS
+$RANDOM pickup/pokepuff { puff1 puff2 }
+puff1 PUFFYUM1
+puff2 PUFFYUM2
+pickup/shard GOTSHARD
+pickup/armor GOTARMOR
+pickup/bag GOTBAG
+pickup/ghostgem GOTGGEM
+pickup/candy GETCANDY
+pickup/boots GOTBOOTS
+pickup/inkball GOTMEGA
+pickup/infrared GOTINFRA
+pickup/cloak GETCLOAK
+pickup/automap GOTMAP
+pickup/mimikyum GOTZITEM
+pickup/skullkey GOTSKULL

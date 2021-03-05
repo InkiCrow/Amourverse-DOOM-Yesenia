@@ -1,0 +1,346 @@
+ACTOR ClamWaterSplash
+{
+	Radius 10
+	Height 6
+	Speed 10
+	projectile
+	-NOGRAVITY
+	Gravity 0.7
+	States
+	{
+		Spawn:
+		CLSP A 1
+		Loop
+		
+		Death:
+		CLSP A 0
+		Stop
+	}
+}
+
+ACTOR RestedClamShellL
+{
+	-NOGRAVITY
+	Scale 1
+	States
+	{
+		Spawn:
+		CLRS A 1
+		Loop
+	}
+}
+
+ACTOR ClamShellL
+{
+	radius 4
+	height 6
+	speed 10
+	projectile
+	-NOGRAVITY
+	+BOUNCEONCEILINGS
+	+DONTSPLASH
+	Gravity 0.7
+	bouncetype Doom
+	bouncecount 5
+	bouncefactor 0.5
+	damagetype nope
+	States
+	{
+		Spawn:
+		CLSH A 1
+		Goto Spin
+		
+		Spin:
+		CLSH ABCDEF 2
+		Loop
+		
+		Death:
+		CLSH D 0 A_SpawnItemEx("RestedClamShellL")
+		Stop
+	}
+}
+
+ACTOR RestedClamShellR
+{
+	-NOGRAVITY
+	Scale 1
+	States
+	{
+		Spawn:
+		CLRS B 1
+		Loop
+	}
+}
+
+ACTOR ClamShellR
+{
+	radius 4
+	height 6
+	speed 10
+	projectile
+	-NOGRAVITY
+	+BOUNCEONCEILINGS
+	+DONTSPLASH
+	Gravity 0.7
+	bouncetype Doom
+	bouncecount 5
+	bouncefactor 0.5
+	damagetype nope
+	States
+	{
+		Spawn:
+		CLSH F 1
+		Goto Spin
+		
+		Spin:
+		CLSH FEDCBA 2
+		Loop
+		
+		Death:
+		CLSH A 0 A_SpawnItemEx("RestedClamShellR")
+		Stop
+	}
+}
+
+ACTOR ClamExplosion
+{
+	Scale 2.0
+	+NOGRAVITY
+	States
+	{	
+		Spawn:
+		CLEX A 0 BRIGHT
+		Death:
+		CLEX A 0 A_PlaySound("clamlaun/explode", CHAN_7, 2)
+		CLEX AB 2 BRIGHT 
+		CLEX C 2 BRIGHT {
+			A_Explode (300, 200);
+			A_CustomMissile("ClamShellL", 0, 0, -90, CMF_AIMDIRECTION, random(30, 60));
+			A_CustomMissile("ClamShellR", 0, 0, 90, CMF_AIMDIRECTION, random(30, 60));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+		}
+		CLEX DE 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR StickyClamExplosion
+{
+	Scale 2.5
+	+NOGRAVITY
+	States
+	{	
+		Spawn:
+		CLEX A 0 BRIGHT
+		Death:
+		CLEX A 0 A_PlaySound("clamlaun/explode", CHAN_7, 2)
+		CLEX AB 2 BRIGHT 
+		CLEX C 2 BRIGHT {
+			A_Explode (250, 250);
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+			A_CustomMissile("ClamWaterSplash", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, 90));
+		}
+		CLEX DE 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR ClamGrenade
+{
+	Radius 6
+	Height 8
+	Speed 30
+	scale 1
+	projectile
+	-NOGRAVITY
+	+BOUNCEONCEILINGS
+	Gravity 0.5
+	BounceType Doom
+	BounceCount 2
+	BounceFactor 0.75
+	States
+	{
+		Spawn:
+		CLGN A 1
+		Goto Spin
+		
+		Spin:
+		CLGN ABCDE 2
+		Loop
+		
+		Death:
+		CLGN FGH 2
+		TNT1 A 0 A_SpawnItemEx("ClamExplosion")
+		Stop
+	}
+}
+
+ACTOR PlacedStickyGrenade
+{
+	Height 8
+	Radius 6
+	Health 10
+	scale 1
+	Mass 1000
+	+NOGRAVITY
+	+SHOOTABLE
+	+NOBLOOD
+	States
+	{
+		Spawn:
+		CLSG ABAC 3
+		Loop
+		
+		Death:
+		CLSG DEF 2 BRIGHT
+		TNT1 A 0 A_SpawnItemEx("StickyClamExplosion")
+		Stop
+	}
+}
+
+ACTOR StickyGrenade
+{
+	Radius 6
+	Height 8
+	Speed 45
+	scale 1
+	projectile
+	-NOGRAVITY
+	+BOUNCEONCEILINGS
+	Gravity 0.5
+	States
+	{
+		Spawn:
+		CLSG A 1
+		Loop
+		
+		Death:
+		ClSG A 0 A_SpawnItemEx("PlacedStickyGrenade")
+		Stop
+	}
+}
+
+ACTOR ClamLauncher : YeseniaArms
+{
+	Weapon.SelectionOrder 7
+	Weapon.AmmoType "ExplosiveClams"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 4
+	Weapon.BobSpeed 2.0
+	Weapon.BobRangeX 0.6
+	Weapon.BobRangeY 0.5
+	Inventory.Icon "YCLAA0"
+	Inventory.PickupMessage "Picked up the Clam Launcher!"
+	+ALT_USES_BOTH
+	+NOAUTOFIRE
+	+NOAUTOAIM
+	States
+	{
+		Spawn:
+		YCLA A 1
+		Loop
+		
+		Select:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablelegs") == 0, 2)
+		TNT1 A 0 A_Overlay(-10, "FirstPersonLegsStand")
+		TNT1 A 0 A_Raise(255)
+		Wait
+		
+		DrawGun:
+		CLAU ABC 2
+		CLAU D 2 A_PlaySound("clamlaun/select", CHAN_WEAPON, 0.5)
+		CLAU E 2
+		TNT1 A 0 A_GiveInventory("ClamEquipped", 1)
+		Goto Ready
+		
+		HolsterGun:
+		CLAU FSTU 2
+		TNT1 A 0 A_TakeInventory("ClamEquipped", 1)
+		Goto Deselect
+		
+		Deselect:
+		TNT1 A 0 A_RemoveLight("clamflash")
+		TNT1 A 0 A_JumpIfInventory("ClamEquipped", 1, "HolsterGun")
+		TNT1 A 0 A_Lower(255)
+		Wait
+		
+		Reselect:
+		CLAU UTSF 2
+		Goto Ready
+		
+		Ready:
+		TNT1 A 0 A_JumpIfInventory("IsClimbing", 1, "LedgeGrab")
+		TNT1 A 0 A_JumpIfInventory("ClamEquipped", 0, 1)
+		Goto DrawGun
+		CLAU F 1 A_WeaponReady(WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3)
+		Loop
+		
+		Fire:
+		CLAU F 2
+		CLAU G 2 A_PlaySound("clamlaun/shot", CHAN_WEAPON, 1)
+		CLAU H 2
+		TNT1 A 0 A_AttachLight("clamflash", 1, "E6F7FF", 50, 90, 0)
+		CLAU I 2 A_FireProjectile("ClamGrenade", 0, TRUE, 0, 5)
+		TNT1 A 0 A_RemoveLight("clamflash")
+		CLAU KLMN 2
+		CLAU O 2 A_PlaySound("clamlaun/reload", CHAN_WEAPON, 0.7)
+		CLAU PQRQPONMLK 2
+		Goto Ready
+		
+		AltFire:
+		CLAU F 2
+		CLAU G 2 A_PlaySound("clamlaun/shot", CHAN_WEAPON, 1)
+		CLAU H 2
+		TNT1 A 0 A_AttachLight("clamflash", 1, "E6F7FF", 50, 90, 0)
+		CLAU I 2 A_FireProjectile("StickyGrenade", 0, TRUE, 0, 5)
+		TNT1 A 0{
+			A_CustomMissile("ClamShellL", 0, 0, -90, CMF_AIMDIRECTION, random(30, 60));
+			A_CustomMissile("ClamShellR", 0, 0, 90, CMF_AIMDIRECTION, random(30, 60));
+		}
+		TNT1 A 0 A_RemoveLight("clamflash")
+		CLAU KLMN 2
+		CLAU O 2 A_PlaySound("clamlaun/reload", CHAN_WEAPON, 0.7)
+		CLAU PQRQPONMLK 2
+		Goto Ready
+		
+		User1:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Kick")
+		Goto Ready
+		
+		User2:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "Slide")
+		Goto Ready
+		
+		User3:
+		TNT1 A 0 A_TakeInventory("IsClimbing", 1)
+		EMPT A 0 A_Jump(256, "GroundSlam")
+		Goto Ready
+	}
+}

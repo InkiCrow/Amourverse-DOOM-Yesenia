@@ -1,0 +1,411 @@
+ACTOR EmptyCapsule
+{
+	States
+	{
+		Spawn:
+		NUPU B 1
+		Loop
+	}
+}
+
+ACTOR GhostGem : CustomInventory Replaces Berserk
+{
+	+COUNTITEM
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You picked up a Ghost Gem! GO BERSERK, GHOST GIRL!!!"
+	Inventory.PickupSound "pickup/ghostgem"
+	States
+	{
+		Spawn:
+		NUPU A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		GGPU AB 3
+		Open:
+		TNT1 A 0 A_AttachLight("ghostglow", 1, "6A4DFF", 30, 70, 0)
+		GGPU CDE 3 
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_GiveInventory("PowerStrength")
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/berserk", CHAN_VOICE, 1)
+		TNT1 A 0 HealThing(100, 1)
+		TNT1 A 0 A_SelectWeapon("ScarfFists")
+		TNT1 A 0 A_SpawnItemEx("EmptyCapsule", 0)
+		Stop
+	}
+}
+
+ACTOR RareCandyHeal : Health
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.Amount 100
+	Inventory.MaxAmount 200
+}
+
+ACTOR RareCandy : CustomInventory Replaces Soulsphere
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You ate up a Rare Candy! You feel rejuvinated!"
+	Inventory.PickupSound "pickup/candy"
+	States
+	{
+		Spawn:
+		NUPU A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		RCPU AB 3
+		Open:
+		TNT1 A 0 A_AttachLight("candyglow", 1, "4DC3FF", 30, 70, 0)
+		RCPU CDCE 3
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/candyget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("RareCandyHeal", 1)
+		TNT1 A 0 A_SpawnItemEx("EmptyCapsule", 0)
+		Stop
+	}
+}
+
+ACTOR WearHeavyBoots : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.MaxAmount 0
+	Powerup.Type "IronFeet"
+}
+
+ACTOR HeavyDutyBoots : CustomInventory Replaces RadSuit
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You picked up the Heavy Duty Boots! You can now walk on sludge."
+	Inventory.PickupSound "pickup/boots"
+	States
+	{
+		Spawn:
+		NUPU A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		HBPU AB 3
+		Open:
+		TNT1 A 0 A_AttachLight("bootsglow", 1, "4DFF6A", 30, 70, 0)
+		HBPU C 3
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/bootsget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("WearHeavyBoots", 1)
+		TNT1 A 0 A_SpawnItemEx("EmptyCapsule", 0)
+		Stop
+	}
+}
+
+ACTOR InkSphereHeal : Health
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.Amount 200
+	Inventory.MaxAmount 200
+}
+
+ACTOR InkSphereArmor : BlueJacket
+{
+	Armor.SavePercent 50
+	Armor.SaveAmount 200
+}
+
+ACTOR InkSphere : CustomInventory Replaces Megasphere
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You picked up the Ink Sphere! Ink courses through your body and armor to heal you!"
+	Inventory.PickupSound "pickup/inkball"
+	States
+	{
+		Spawn:
+		NUPU A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		ISPU AB 3
+		Open:
+		TNT1 A 0 A_AttachLight("inkballglow", 1, "FF4D4D", 30, 70, 0)
+		ISPU CDE 3
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/inkget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("InkSphereHeal", 1)
+		TNT1 A 0 A_GiveInventory("InkSphereArmor", 1)
+		TNT1 A 0 A_SpawnItemEx("EmptyCapsule", 0)
+		Stop
+	}
+}
+
+ACTOR GiveThermalLens : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.MaxAmount 0
+	Powerup.Type "LightAmp"
+}
+
+ACTOR ThermalScopeLens : CustomInventory Replaces Infrared
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You picked up the Thermal Scope Lens!"
+	Inventory.PickupSound "pickup/infrared"
+	States
+	{
+		Spawn:
+		NUPU A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		SLPU AB 3
+		Open:
+		TNT1 A 0 A_AttachLight("scopeglow", 1, "C4FF4D", 30, 70, 0)
+		SLPU C 3
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/thrmlget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("GiveThermalLens", 1)
+		TNT1 A 0 A_SpawnItemEx("EmptyCapsule", 0)
+		Stop
+	}
+}
+
+ACTOR GiveCloak : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	+BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Type "Invisibility"
+}
+
+ACTOR PhaseCloth : CustomInventory Replaces BlurSphere
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You picked up the Phase Cloth!"
+	Inventory.PickupSound "pickup/cloak"
+	States
+	{
+		Spawn:
+		NUPU A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		PCPU AB 3
+		Open:
+		TNT1 A 0 A_AttachLight("clothglow", 1, "4D6AFF", 30, 70, 0)
+		PCPU CDE 3
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/cloakget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("GiveCloak", 1)
+		TNT1 A 0 A_SpawnItemEx("EmptyCapsule", 0)
+		Stop
+	}
+}
+
+ACTOR DisabledAutoMap
+{
+	States
+	{
+		Spawn:
+		AMAP E 1
+		Loop
+	}
+}
+
+ACTOR MapRevealed : MapRevealer
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+}
+
+ACTOR AutomapModule : CustomInventory Replaces AllMap
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "You accessed the Map Module! The paths are revealed to you."
+	Inventory.PickupSound "pickup/automap"
+	States
+	{
+		Spawn:
+		TNT1 A 0 A_AttachLight("mapglow", 1, "4DFF4D", 30, 70, 0)
+		AMAP ABCD 4
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/mapget", CHAN_VOICE, 1)
+		TNT1 A 0 A_GiveInventory("MapRevealed", 1)
+		TNT1 A 0 A_SpawnItemEx("DisabledAutoMap", 0)
+		Stop
+		
+	}
+}
+
+//Here comes the beast that is the Mimikyum Z powerup.
+ACTOR EmptyMimikyumSlot
+{
+	States
+	{
+		Spawn:
+		MMKZ I 1
+		Loop
+	}
+}
+
+ACTOR MimikyumInvulnerability : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	+BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Duration 2100
+	Powerup.Type "Invulnerable"
+	Powerup.Mode "Reflective"
+	Powerup.Colormap 0.55, 0.22, 0.58
+}
+
+ACTOR PowerQuadDamage : PowerDamage
+{
+	DamageFactor "normal", 4
+}
+
+ACTOR MimikyumDamage : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	+BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Duration 2100
+	Powerup.Type "QuadDamage"
+}
+
+ACTOR PowerNeoSpeed : PowerSpeed
+{
+	Speed 2
+}
+
+ACTOR MimikyumSpeed : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	+BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Duration 2100
+	Powerup.Type "NeoSpeed"
+}
+
+ACTOR MimikyumHaste : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	+BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Duration 2100
+	Powerup.Type "DoubleFiringSpeed"
+}
+
+ACTOR MimikyumInfinite : PowerupGiver
+{
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	+BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Duration 2100
+	Powerup.Type "InfiniteAmmo"
+}
+
+ACTOR MimikyumZ : CustomInventory Replaces InvulnerabilitySphere
+{
+	+COUNTITEM
+	+AUTOACTIVATE
+	+ALWAYSPICKUP
+	Inventory.PickupMessage "YOU PICKED UP THE MIMIKYUM Z!!!"
+	Inventory.PickupSound "pickup/mimikyum"
+	States
+	{
+		Spawn:
+		MMKZ A 1 A_CheckProximity("OpenCapsule", "YeseniaPlayer", 120)
+		Loop
+		
+		OpenCapsule:
+		MMKZ BCD 3
+		MMKZ EF 3
+		Open:
+		TNT1 A 0 A_AttachLight("mmzglow", 1, "E14DFF", 30, 120, 0)
+		MMKZ GH 3
+		Loop
+		
+		Pickup:
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 0, 6)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicefrequency") == 2, 2)
+		TNT1 A 0 A_Jump(128, 4)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 1, 3)
+		TNT1 A 0 A_JumpIf(GetCVar("y_enablevoicetype") == 0, 2)
+		TNT1 A 0 A_PlaySound("yesenia/mmkzget", CHAN_VOICE, 2)
+		TNT1 A 0 A_GiveInventory("MimikyumInvulnerability", 1)
+		TNT1 A 0 A_GiveInventory("MimikyumDamage", 1)
+		TNT1 A 0 A_GiveInventory("MimikyumSpeed", 1)
+		TNT1 A 0 A_GiveInventory("MimikyumHaste", 1)
+		TNT1 A 0 A_GiveInventory("MimikyumInfinite", 1)
+		TNT1 A 0 A_SpawnItemEx("EmptyMimikyumSlot", 0)
+		Stop
+	}
+}
